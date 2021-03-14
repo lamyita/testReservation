@@ -1,10 +1,11 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-public class NbrPlace {
+public class NbrPlace  implements Serializable {
     @Id
     @GeneratedValue
     private Long idNbrplace;
@@ -18,7 +19,7 @@ public class NbrPlace {
     public NbrPlace() {
     }
 
-    public NbrPlace( int nombre, Date dateAjout, String typeReservation, Reservation reservation) {
+    public NbrPlace(int nombre, Date dateAjout, String typeReservation, Reservation reservation) {
         this.nombre = nombre;
         this.dateAjout = dateAjout;
         this.typeReservation = typeReservation;
@@ -64,4 +65,5 @@ public class NbrPlace {
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
+
 }

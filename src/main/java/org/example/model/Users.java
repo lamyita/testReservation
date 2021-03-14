@@ -8,24 +8,31 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Users implements Serializable {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-
-    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsers;
     private String nom;
     private String prenom;
     private String email;
     private String password;
-    @OneToOne (mappedBy = "users")
+    @OneToOne(mappedBy = "users")
     private Admin admin;
-    @OneToOne (mappedBy = "users")
+    @OneToOne(mappedBy = "users")
     private Apprenant apprenant;
-
     @ManyToOne
-    @JoinColumn(name = "role_id", referencedColumnName = "role_id", nullable = false)
+    @JoinColumn(name = "role_id")
     private Roles roles;
 
     public Users() {
+    }
+
+    public Users(String nom, String prenom, String email, String password, Admin admin, Apprenant apprenant, Roles roles) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.admin = admin;
+        this.apprenant = apprenant;
+        this.roles = roles;
     }
 
     public Users(String nom, String prenom, String email, String password, Roles roles) {
@@ -99,4 +106,5 @@ public class Users implements Serializable {
     public void setApprenant(Apprenant apprenant) {
         this.apprenant = apprenant;
     }
+
 }

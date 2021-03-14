@@ -18,7 +18,7 @@ public class JspConfig {
             resourceRegistration.addResourceLocations("/resources/**");
             registry.addResourceHandler("/css/**").addResourceLocations("/css/**");
             registry.addResourceHandler("/img/**").addResourceLocations("/img/**");
-            registry.addResourceHandler("/js/**").addResourceLocations("/js/**");
+            registry.addResourceHandler("/WEB-INF/views/js/**").addResourceLocations("/WEB-INF/views/js/**");
             registry.addResourceHandler("/resources/**")
                     .addResourceLocations("classpath:/resources/");
             // do the classpath works with the directory under webapp?

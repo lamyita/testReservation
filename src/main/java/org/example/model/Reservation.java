@@ -1,13 +1,14 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
 
 @Entity
-public class Reservation {
+public class Reservation implements Serializable {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idReservation;
     private Date dateReservation;
     private boolean confirmation;
@@ -66,4 +67,5 @@ public class Reservation {
     public void setApprenant(Apprenant apprenant) {
         this.apprenant = apprenant;
     }
+
 }

@@ -12,7 +12,7 @@
 
     <!-- Vendor CSS Files -->
 
-    <link href="<c:url value="/resources/assets/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
@@ -24,11 +24,11 @@
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <div id="logo">
-            <link href="<c:url value="/resources/assets/img/logo.jpg" />" rel="stylesheet">
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="index.html">Regna</a></h1>-->
-        </div>
+        <!--  <div id="logo">
+             <link href="</>" rel="stylesheet">
+             Uncomment below if you prefer to use a text logo
+            <h1><a href="index.html">Regna</a></h1>
+        </div>-->
 
         <nav id="navbar" class="navbar">
             <ul>
@@ -76,9 +76,9 @@
 
 
 
-<link href="<c:url value="/resources/assets/js/main.js" />" rel="stylesheet">
+<link href="<c:url value="/resources/js/main.js" />" rel="stylesheet">
 
-<link href="<c:url value="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.js" />" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.js" />" rel="stylesheet">
 
 </body>
 </html>

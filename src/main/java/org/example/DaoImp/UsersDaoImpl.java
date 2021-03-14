@@ -45,28 +45,4 @@ public class UsersDaoImpl implements UsersDao {
         return null;
     }
 
-    @Override
-    public void addRole(Roles roles) {
-
-    }
-
-    @Override
-    public List<Roles> listUserRole() {
-        return null;
-    }
-
-    @Override
-    public void removeUserRole(int id) {
-
-    }
-
-    @Override
-    public Roles getUserRole(int id) {
-        return null;
-    }
-
-    @Override
-    public Roles findRoleByName(String roles) {
-        return null;
-    }
 }

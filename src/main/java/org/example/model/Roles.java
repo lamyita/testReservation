@@ -9,7 +9,7 @@ public class Roles implements Serializable {
     @GeneratedValue
     private Long roleId;
     private String roleType;
-    @OneToMany(mappedBy = "idUsers")
+    @OneToMany(mappedBy = "user_id")
     private Collection<Users> users;
 
     public Roles() {

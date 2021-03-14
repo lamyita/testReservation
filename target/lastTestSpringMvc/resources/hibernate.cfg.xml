@@ -22,6 +22,7 @@
         <mapping class="org.example.model.Admin"/>
         <mapping class="org.example.model.Reservation"/>
         <mapping class="org.example.model.Users"/>
+        <mapping class="org.example.model.NbrPlace"/>
         <mapping class="org.example.model.Roles"/>
         <mapping class="org.example.model.Apprenant"/>
 

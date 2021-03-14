@@ -21,15 +21,7 @@ public interface UsersDao {
 
     public Users findByLogin(String email);
 
-    public void addRole(Roles roles);
 
-    public List<Roles> listUserRole();
-
-    public void removeUserRole(int id);
-
-    public Roles getUserRole(int id);
-
-    public Roles findRoleByName(String roles);
 
 
 }

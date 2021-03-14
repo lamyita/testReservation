@@ -10,7 +10,7 @@ public class Test {
         Apprenant apprenant =new Apprenant();
         Admin admin = new Admin();
         Roles roles = new Roles();
-        Users users = new Users("lamyaa","lamyaa","lamyaa@gmail.com","admin",roles);
+        Users users = new Users("lamyaa","lamyaa","lamyaa@gmail.com","admin",admin,apprenant,roles);
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction  = null;
