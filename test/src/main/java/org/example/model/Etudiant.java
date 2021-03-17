@@ -16,8 +16,8 @@ public class Etudiant implements Serializable {
 
 	@Id
 	@Column(name = "id_etudiant")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEtudiant;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idEtudiant;
 	private String nom;
 	private Date dateNaissance;
 	private String email;
@@ -36,11 +36,11 @@ public class Etudiant implements Serializable {
 		this.photo = photo;
 	}
 
-	public Long getIdEtudiant() {
+	public long getIdEtudiant() {
 		return idEtudiant;
 	}
 
-	public void setIdEtudiant(Long idEtudiant) {
+	public void setIdEtudiant(long idEtudiant) {
 		this.idEtudiant = idEtudiant;
 	}
 

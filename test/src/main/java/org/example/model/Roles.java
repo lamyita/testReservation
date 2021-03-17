@@ -1,65 +1,51 @@
 package org.example.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
-
+import java.util.Collection;
 
 @Entity
 public class Roles implements Serializable {
     @Id
-    @Column(name = "id_role")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
+    @Column(name = "role_id")
     private Long idRole;
 
-    @Column(nullable = false, unique = true)
-    private String roleName;
+    @Column(name = "role_type")
+    private String roleType;
 
+    @OneToMany(mappedBy = "roles")
+    private Collection<Users> users;
 
-    @OneToMany(mappedBy = "role")
-    private List<Users> users;
-    //Constructor
-    public Roles(){}
-
-    public Roles(Long id, String roleName) {
-        this.idRole = id;
-        this.roleName = roleName;
+    public Roles() {
     }
 
-    public Roles(String roleName) {
-        this.roleName = roleName;
+    public Roles(String roleType, Collection<Users> users) {
+        this.roleType = roleType;
+        this.users = users;
     }
 
-    //Getters and Setters
-
-    public Long getId() {
+    public Long getIdRole() {
         return idRole;
     }
 
-    public void setId(Long id) {
-        this.idRole = id;
+    public void setIdRole(Long roleId) {
+        this.idRole = roleId;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getRoleType() {
+        return roleType;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRoleType(String roleType) {
+        this.roleType = roleType;
     }
 
-    @Override
-    public String toString() {
-        return "Roles{" +
-                "id=" + idRole +
-                ", roleName='" + roleName + '\'' +
-                '}';
+    public Collection<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<Users> users) {
+        this.users = users;
     }
 }

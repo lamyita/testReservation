@@ -22,11 +22,45 @@ public class HomeController {
 	private EtudiantService etudiantService;
 
 
+	//@RequestMapping(value="/")
+	////public ModelAndView test(HttpServletResponse response, ModelMap modelMap) throws IOException, ClassNotFoundException, SQLException{
+		//modelMap.put("etudiants", etudiantService.findAll());
+	//	return new ModelAndView("test");
+//	}
+
 	@RequestMapping(value="/")
-	public ModelAndView test(HttpServletResponse response, ModelMap modelMap) throws IOException, ClassNotFoundException, SQLException{
-		modelMap.put("etudiants", etudiantService.findAll());
-		return new ModelAndView("test");
+	public ModelAndView test(HttpServletResponse response) throws IOException{
+		return new ModelAndView("home");
 	}
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+	   public String home() {
+	      return "home";
+	  }
+  
+	
+
+     @RequestMapping(value = "/test", method = RequestMethod.GET)
+	   public String test() {
+	      return "test";
+	  }
+	
+     @RequestMapping(value = "/login", method = RequestMethod.GET)
+	   public String login() {
+	      return "login";
+	  }
+     
+     @RequestMapping(value = "/formreservation", method = RequestMethod.GET)
+	   public String formreservation() {
+	      return "formreservation";
+	  }
+     
+     @RequestMapping(value = "/editReservation", method = RequestMethod.GET)
+	   public String editReservation() {
+	      return "editReservation";
+	  }
+  
+	
 //	@RequestMapping(value = "/index", method = RequestMethod.GET)
 //	public String index(ModelMap modelMap) throws ClassNotFoundException, SQLException {
 //		modelMap.put("etudiants", etudiantService.findAll());

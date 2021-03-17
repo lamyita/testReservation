@@ -5,35 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Etudiant</title>
+<title>Users</title>
+      <link href="resources/login.css" rel="stylesheet">
+
 </head>
 <body>
 
-	<h1>Gérer les etudiants</h1>
-
-	<a href="#addEtudiant">Nouvel etudiant</a>
-
-	<table style="width: 100%">
-		<thead>
-			<tr>
-				<th>idEtudiant</th>
-				<th>nom</th>
-				<th>dateNaissance</th>
-				<th>email</th>
-				<th>photo</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="etudiant" items="${etudiants}" varStatus="e">
-				<tr>
-					<td>${etudiant.idEtudiant}</td>
-					<td>${etudiant.nom}</td>
-					<td>${etudiant.dateNaissance}</td>
-					<td>${etudiant.email}</td>
-					<td>${etudiant.photo}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+     <p>tetd</p>
 </body>
 </html>

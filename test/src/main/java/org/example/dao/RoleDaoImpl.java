@@ -19,7 +19,7 @@ public class RoleDaoImpl implements RoleDao {
 	    }
 
 	    @Override
-	    public Roles getRoleById(Long id) {
+	    public Roles getRoleById(long id) {
 	       /* session =  HibernateUtil.getSessionFactory().openSession();
 	        session.beginTransaction();
 	        //Roles role = session.find(Roles.class, id);
@@ -60,7 +60,7 @@ public class RoleDaoImpl implements RoleDao {
 
 
 	@Override
-	public void deleteRole(Long id) {
+	public void deleteRole(long id) {
 	
          Roles role;
         session = HibernateUtil.getSessionFactory().openSession();
@@ -85,10 +85,11 @@ public class RoleDaoImpl implements RoleDao {
 	        session = HibernateUtil.getSessionFactory().openSession();
 	        session.beginTransaction();
 	       // userUp = session.find(Users.class, user.getUserId());
-	        roleUp = (Roles) session.get(Roles.class, role.getId());
+	        roleUp = (Roles) session.get(Roles.class, role.getIdRole());
 	        	       
 	        if (roleUp != null){
-	            roleUp.setRoleName(role.getRoleName());
+	        	
+	            roleUp.setRoleType(role.getRoleType());
 	            System.out.println("Role Updated");
 	        }else{
 	            System.out.println("Role Not Exist");

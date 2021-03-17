@@ -7,9 +7,9 @@ import org.example.model.Roles;
 public interface RoleDao {
 	
 	 public  void addRole(Roles role);
-	    public Roles getRoleById(Long id);
+	    public Roles getRoleById(long id);
 	    public List<Roles> getAllRoles();
-	    public void deleteRole(Long id);
+	    public void deleteRole(long id);
 	    public Roles updateRole(Roles role);
 
 }

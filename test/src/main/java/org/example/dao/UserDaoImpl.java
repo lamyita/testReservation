@@ -24,8 +24,6 @@ public class UserDaoImpl implements UserDao{
     @Override
     public void createUser(Users user) {
 		session = HibernateUtil.getSessionFactory().openSession();
-
-        //session = HibernateUtil.getSessionFactory();
         session.beginTransaction();
         session.save(user);
         session.getTransaction().commit();
@@ -33,7 +31,7 @@ public class UserDaoImpl implements UserDao{
 
     
     @Override
-    public Users getUserById(Long id) {
+    public Users getUserById(long id) {
 		
         
     	Users user = null;
@@ -54,6 +52,7 @@ public class UserDaoImpl implements UserDao{
 		return user;
     }
 
+    
    // @Override
     public List<Users> getAllUsers() {
     	
@@ -74,7 +73,7 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public void dropUser(Long id) {
+    public void dropUser(long id) {
         Users user;
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -97,15 +96,16 @@ public class UserDaoImpl implements UserDao{
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
        // userUp = session.find(Users.class, user.getUserId());
-        userUp = (Users) session.get(Users.class, user.getUserId());
+        userUp = (Users) session.get(Users.class, user.getIdUsers());
 
         if (userUp != null){
-        	userUp.setUserId(user.getUserId());
-            userUp.setUserPrenom(user.getUserPrenom());
-            userUp.setUserNom(user.getUserNom());
-            userUp.setUserEmail(user.getUserEmail());
-            userUp.setUserPassword(user.getUserPassword());
-            userUp.setRole(user.getRole());
+        	userUp.setIdUsers(user.getIdUsers());
+        	userUp.setNom(user.getNom());
+        	// userUp.setNom(user.getNom());
+             userUp.setEmail(user.getEmail());
+             userUp.setPassword(user.getPassword());
+             userUp.setRoles(user.getRoles());
+         
             System.out.println("User updated");
         }else{
             System.out.println("User Not Exist");

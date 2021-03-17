@@ -1,7 +1,8 @@
 package org.example.model;
 import javax.persistence.*;
-import java.sql.Date;
+
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 public class Reservation {
@@ -14,6 +15,7 @@ public class Reservation {
     private Collection<NbrPlace> nbrPlacetablesByIdReservation;
     @ManyToOne
     @JoinColumn(name = "idUsers")
+    
     private Apprenant apprenant;
 
     public Reservation() {
@@ -25,8 +27,29 @@ public class Reservation {
         this.nbrPlacetablesByIdReservation = nbrPlacetablesByIdReservation;
         this.apprenant = apprenant;
     }
+    
+    
 
-    public Long getIdReservation() {
+    public Reservation(Date dateReservation, boolean confirmation,Apprenant apprenant) {
+        this.dateReservation = dateReservation;
+        this.apprenant = apprenant;
+
+      
+    }
+    
+    
+    
+    
+
+//    public Reservation(Long idReservation, Date dateReservation, boolean confirmation, Apprenant apprenant) {
+//		super();
+//		this.idReservation = idReservation;
+//		this.dateReservation = dateReservation;
+//		this.confirmation = confirmation;
+//		this.apprenant = apprenant;
+//	}
+
+	public Long getIdReservation() {
         return idReservation;
     }
 
@@ -65,4 +88,13 @@ public class Reservation {
     public void setApprenant(Apprenant apprenant) {
         this.apprenant = apprenant;
     }
+
+	@Override
+	public String toString() {
+		return "Reservation [idReservation=" + idReservation + ", dateReservation=" + dateReservation
+				+ ", confirmation=" + confirmation + ", nbrPlacetablesByIdReservation=" + nbrPlacetablesByIdReservation
+				+ ", apprenant=" + apprenant + "]";
+	}
+    
+    
 }
