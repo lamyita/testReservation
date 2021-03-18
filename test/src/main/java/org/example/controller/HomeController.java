@@ -7,32 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.example.service.EtudiantService;
 import org.example.service.EtudiantServiceImpl;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.ui.ModelMap;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.servlet.ModelAndView;
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/")
 public class HomeController {
-	
 	
 	@Autowired
 	private EtudiantService etudiantService;
@@ -44,17 +28,11 @@ public class HomeController {
 	//	return new ModelAndView("test");
 //	}
 
-//	@RequestMapping(value="/")
-//	public ModelAndView test(HttpServletResponse response) throws IOException{
-//		return new ModelAndView("home");
-//	}
-	@RequestMapping(value="/", method = RequestMethod.GET)
-    public String test(Model model) throws IOException{
-        model.addAttribute("user", user);
-       return "redirect:/home";
-    }
-	
-	
+	@RequestMapping(value="/")
+	public ModelAndView test(HttpServletResponse response) throws IOException{
+		return new ModelAndView("home");
+	}
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
 	   public String home() {
 	      return "home";
