@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 import java.util.Date;
 
+import org.example.dao.ApprenantDao;
+import org.example.dao.ApprenantDaoImpl;
 import org.example.dao.ReservationDao;
 import org.example.dao.ReservationDaoImpl;
 import org.example.dao.RoleDao;
@@ -25,22 +27,37 @@ public class Test {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		
-		
-		UserDao userDao = new UserDaoImpl();
-        Roles roles = new Roles();
-        roles.setIdRole(2L);
-
-        Apprenant apprenant = new Apprenant();
-        apprenant.setIdUsers(2L);
-
-
-        Date date = new Date();
-
-        Reservation reservation = new Reservation(date, false, apprenant);
-        ReservationDao reserv = new ReservationDaoImpl();
-
-        reserv.createReservation(reservation);
+//		
+//		UserDao userDao = new UserDaoImpl();
+//        Roles roles = new Roles();
+//        roles.setIdRole(2L);
+//
+//        Apprenant apprenant = new Apprenant();
+//        apprenant.setIdUsers(5L);
+//
+//
+//        Date date = new Date();
+//
+//        Reservation reservation = new Reservation(date, false, apprenant);
+//		ReservationDao reserv = new ReservationDaoImpl();
+//
+//
+//       reserv.createReservation(reservation);
+//       
+       
+       
+		  ApprenantDao apprenantDao = new ApprenantDaoImpl();
+		     Roles roles = new Roles();
+		        roles.setIdRole(2L);
+		    
+		    apprenantDao.creatApprenant(new Apprenant("test","test","lami@gmail.com","test",roles));
         
+//  		ApprenantDao apprenantDao = new ApprenantDaoImpl();
+//	 Roles roles = new Roles();
+//       roles.setIdRole(2L);
+//	
+//	apprenantDao.creatApprenant(new Apprenant("lamyaa","lami","lami@gmail.com","test",roles));
+
         
         
         
