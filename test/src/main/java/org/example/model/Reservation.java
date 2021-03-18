@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity
 public class Reservation {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long idReservation;
     private Date dateReservation;
     private boolean confirmation;
@@ -37,7 +37,12 @@ public class Reservation {
       
     }
     
-    
+    public Reservation(Long idReservation, Date dateReservation, boolean confirmation, Apprenant apprenant) {
+        this.idReservation = idReservation;
+        this.dateReservation = dateReservation;
+        this.confirmation = confirmation;
+        this.apprenant = apprenant;
+    }
     
     
 
