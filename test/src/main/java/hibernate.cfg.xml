@@ -5,10 +5,14 @@
 <hibernate-configuration>
 
     <session-factory>
+            <!-- Database connection settings -->
+    
         <property name="connection.url">jdbc:postgresql://localhost:5432/reservationeclipse</property> <!-- BD Mane -->
         <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
         <property name="connection.username">postgres</property> <!-- DB User -->
         <property name="connection.password">admin</property> <!-- DB Password -->
+
+        <!-- Drop and re-create the database schema on startup / Update the same DB /validate -->
 
         <!-- <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property> -->
         <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->

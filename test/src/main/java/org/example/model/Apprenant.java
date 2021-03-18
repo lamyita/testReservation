@@ -12,6 +12,7 @@ public class Apprenant extends Users implements Serializable {
     private Users users;
     
     @OneToMany(mappedBy = "apprenant")
+    
     private List<Reservation> reservations;
 
     public Apprenant() {
@@ -23,6 +24,12 @@ public class Apprenant extends Users implements Serializable {
 
     public Apprenant(String nom, String prenom, String email, String password, Admin admin, Apprenant apprenant, Roles roles, Users users) {
         super(nom, prenom, email, password, admin, apprenant, roles);
+        this.users = users;
+    }
+    
+    
+    public Apprenant(String nom, String prenom, String email, String password,  Roles roles) {
+        super(nom, prenom, email, password, roles);
         this.users = users;
     }
 

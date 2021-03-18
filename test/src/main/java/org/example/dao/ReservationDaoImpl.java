@@ -2,23 +2,25 @@ package org.example.dao;
 
 import java.util.List;
 
+
 import org.example.model.Reservation;
 import org.example.model.Users;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class ReservationDaoImpl  implements ReservationDao  {
 
     Session session;
 
-	@Override
-	public void createReservation(Reservation reservation) {
-
+    @Override
+    public void createReservation(Reservation reservation) {
         session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(reservation);
-        session.getTransaction().commit();		
-	}
+        Transaction transaction  = null;
+        transaction = session.beginTransaction();
+        session.persist(reservation);
+        transaction.commit();
+    }
 
 	@Override
 	public Reservation getReservationById(long id) {

@@ -34,6 +34,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     }
 	@Bean(name = "etudiantDao")
     public EtudiantDao getEtudiantDao() {
+		
         return new EtudiantDaoImp();
     }
 
@@ -43,7 +44,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/img/**").addResourceLocations("/img/").setCachePeriod(31556926);
 		registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(31556926);
 		registry.addResourceHandler("/**").addResourceLocations("/").setCachePeriod(31556926);
+	
 	}
-
-
 }
