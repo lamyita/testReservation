@@ -18,6 +18,8 @@ import org.example.model.Reservation;
 import org.example.model.Roles;
 import org.example.model.Users;
 import org.example.service.EtudiantService;
+import org.example.service.UserService;
+import org.example.service.UserServiceImpl;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,13 +47,17 @@ public class Test {
 //       reserv.createReservation(reservation);
 //       
        
-       
-		  ApprenantDao apprenantDao = new ApprenantDaoImpl();
-		     Roles roles = new Roles();
-		        roles.setIdRole(2L);
-		    
-		    apprenantDao.creatApprenant(new Apprenant("test","test","lami@gmail.com","test",roles));
+//       
+//		  ApprenantDao apprenantDao = new ApprenantDaoImpl();
+//		     Roles roles = new Roles();
+//		        roles.setIdRole(2L);
+//		    
+//		    apprenantDao.creatApprenant(new Apprenant("test","test","lami@gmail.com","test",roles));
         
+		
+		UserService ser=new UserServiceImpl();
+        System.out.println(ser.validate("email@gmail.com","admin"));
+		
 //  		ApprenantDao apprenantDao = new ApprenantDaoImpl();
 //	 Roles roles = new Roles();
 //       roles.setIdRole(2L);

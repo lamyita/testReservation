@@ -18,6 +18,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+@Repository("UserDao")
+@Component
 public class UserDaoImpl implements UserDao{
 	Session session;
 

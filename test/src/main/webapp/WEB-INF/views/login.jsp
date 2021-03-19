@@ -31,8 +31,8 @@
 		<div class="login-form">
 		
 			<div class="sign-in-htm">
-<!-- 		<form action="Login" method="post">
- -->			
+		<form action="Login" method="post">
+ 			
 					<div class="group">
 					<label for="user" class="label">Email</label>
 					 
