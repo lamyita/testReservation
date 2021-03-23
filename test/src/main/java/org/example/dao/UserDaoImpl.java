@@ -115,4 +115,24 @@ public class UserDaoImpl implements UserDao{
         session.getTransaction().commit();
         return userUp;
     }
+    
+    
+    
+    
+    
+    
+    @Override
+    @Transactional
+    public void create(Users users) {
+		session = HibernateUtil.getSessionFactory().openSession();
+
+       session.saveOrUpdate(users);
+
+    }
+    
+    
+    
+    
+    
+    
 }

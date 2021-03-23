@@ -5,6 +5,8 @@ import java.io.Serializable;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "users")
+
 public class Users implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

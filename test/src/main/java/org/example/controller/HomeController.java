@@ -46,6 +46,15 @@ public class HomeController {
 	   public String test() {
 	      return "test";
 	  }
+     
+     
+
+     @RequestMapping(value = "/register", method = RequestMethod.GET)
+	   public String register() {
+	      return "register";
+	  }
+     
+     
 //	//	private EtudiantService etudiantService;
 
 

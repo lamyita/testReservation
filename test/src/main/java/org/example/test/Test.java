@@ -54,9 +54,7 @@ public class Test {
 //		    
 //		    apprenantDao.creatApprenant(new Apprenant("test","test","lami@gmail.com","test",roles));
         
-		
-		UserService ser=new UserServiceImpl();
-        System.out.println(ser.validate("email@gmail.com","admin"));
+	 
 		
 //  		ApprenantDao apprenantDao = new ApprenantDaoImpl();
 //	 Roles roles = new Roles();
