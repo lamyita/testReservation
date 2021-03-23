@@ -17,9 +17,11 @@
 <title>Registration Form With Html & Css</title>
 
 
+<link href="resources/register.css" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+	 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -27,41 +29,21 @@
 <body>
 
 	<div>
+	
 	<form action="Register" method="post">
-		
 
+	<div class='login'>
+	  <h2>Register</h2>
+	  <input name='nom' placeholder='nom' type='text' required>
+	  <input name='prenom' placeholder='prenom' type='text' required>
 
-			<h4 class="text-warning text-center pt-5">Registration Page</h4>
+	  <input name='email' placeholder='E-Mail Address' type='text' required>
+	  <input id='pw' name='password' placeholder='Password' type='password' required>
 
-
-			<label>nom</label>
-			<input type="text" class="input" name="nom"
-				placeholder="nom" />
-
-
-			</label> prenom<label>
-			 <input type="text" class="input" name="prenom"
-				placeholder="prenom" />
-
-			</label>email <label>
-			 <input type="text" class="input" name="email"
-				placeholder="EMAIL" />
-
-			</label> <label> 
-			<input type="password" class="input" name="password" placeholder="password" />
-
-
-			</label>
-
-
-
-
-		<input type="submit" class="button" value="register">
-
-
-
-
-		</form>
+	  <input class='animated' type='submit' value='register'>
+	  <a class='forgot' href='login'>Already have an account?</a>
+	</div>
+	</form>
 
 
 	</div>
