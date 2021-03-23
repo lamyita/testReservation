@@ -13,59 +13,27 @@
 </head>
 <body>
 
-	<!--    <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto active" href="home">Home</a></li>
-                <li><a class="nav-link scrollto" href="reservation">Register</a></li>
-                <li><a class="nav-link scrollto" href="login">Login</a></li>
-                <li> <a href="#">Login to Journal</a></li>
+<div class="vid-container">
+    <form action="Login" method="post">
+
+      <div class="box">
+        <h1>Login</h1>
+                <input id="user"
+                type="email" class="input" placeholder="Entrer Email"
+                name="email" required>
+
+        <input id="pass"
+        type="password" name="password" placeholder="Entrer password"
+        class="input" data-type="password" required>
+        <input type="submit" class="button" value="login">
+
+        <!-- <p>Not a member? <span>Sign Up</span></p> -->
+
+        <a  href='register'><p>Not a member? <span>Sign Up</span></p></a>
 
 
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav> -->
-
-
-	<div class="login-wrap">
-		<div class="login-html">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
-				for="tab-1" class="tab">Sign In</label> <input id="tab-2"
-				type="radio" name="tab" class="sign-up"><label for="tab-2"
-				class="tab">Sign Up</label>
-			<div class="login-form">
-
-				<div class="sign-in-htm">
-					<form action="Login" method="post">
-
-						<div class="group">
-							<label for="user" class="label">Email</label> <input id="user"
-								type="email" class="input" placeholder="Entrer Email"
-								name="email">
-						</div>
-						<div class="group">
-							<label for="pass" class="label">Password</label> <input id="pass"
-								type="password" name="password" placeholder="Entrer password"
-								class="input" data-type="password">
-						</div>
-						<div class="group">
-							<input id="check" type="checkbox" class="check" checked>
-							<label for="check"><span class="icon"></span> Keep me
-								Signed in</label>
-						</div>
-						<div class="group">
-							<input type="submit" class="button" value="login">
-						</div>
-						<div class="hr"></div>
-						<div class="foot-lnk">
-							<a href="#forgot">Forgot Password?</a>
-						</div>
-
-
-					</form>
-				</div>
-			</div>
-			</div>
-
+      </div>
+  </form>
 </div>
 				
 </body>

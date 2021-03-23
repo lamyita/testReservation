@@ -121,14 +121,7 @@ public class UserDaoImpl implements UserDao{
     
     
     
-    @Override
-    @Transactional
-    public void create(Users users) {
-		session = HibernateUtil.getSessionFactory().openSession();
-
-       session.saveOrUpdate(users);
-
-    }
+ 
     
     
     
