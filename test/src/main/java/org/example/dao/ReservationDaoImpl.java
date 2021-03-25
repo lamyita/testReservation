@@ -8,6 +8,9 @@ import org.example.model.Users;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
+
+@Repository
 
 public class ReservationDaoImpl  implements ReservationDao  {
 
