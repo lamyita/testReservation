@@ -16,6 +16,7 @@ import org.example.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,7 +43,7 @@ public class ReservationContoller {
 	
 	@RequestMapping(value = "/reservation", method = RequestMethod.GET )
 //	public String reservation(Model theModel) {
-	   public ModelAndView listEmployee(ModelAndView theModel) throws IOException {
+	   public ModelAndView listReservation(ModelAndView theModel) throws IOException {
 		List<Reservation> listReservation = reservationService.getAllReservation();
 		theModel.addObject("listReservation", listReservation);
 		theModel.setViewName("reservation");
@@ -50,35 +51,33 @@ public class ReservationContoller {
 	
 	}
 	
-//	
-	//	Reservation reservation = new Reservation();
-//	 List<Reservation> reservations = reservationDao.getAllReservation();
-////		List<Reservation> reservations=new ArrayList<Reservation>();
-//		theModel.addAttribute("reservations", reservations);
-//		System.out.println(reservation);
-//		
-//		return "reservation";	
-//	@Autowired
-//	private ReservationDao reservationDao ;
-//
-//
-//	
-//	@Autowired
-//	private UserDao userDao;
-//	/**
-//	 * Simply selects the home view to render by returning its name.
-//	 */
-//
-//	@RequestMapping(value = "/reservation", method = RequestMethod.GET )
-//	public String reservationFrom(Model theModel) {
-//	    Reservation reservation = new Reservation();
-//        List<Reservation> reservations = new ArrayList<Reservation>();
-//        theModel.addAttribute("reservations", reservations);
-//        System.out.println(reservations);
-//        
-//        return "reservation";
-//	}
-//	
+
+	
+	
+
+	
+	
+	   @RequestMapping(value = "/newReservation", method = RequestMethod.GET)
+	    public ModelAndView newReserv(ModelAndView model) {
+		   Reservation reservation = new Reservation();
+	        model.addObject("reservation", reservation);
+	        model.setViewName("formReservation");
+	        return model;
+	    }
+	   
+
+	    @RequestMapping(value = "/saveReservation", method = RequestMethod.POST)
+	    public ModelAndView saveReservation(@ModelAttribute Reservation reservation) {
+	    	if(reservation.getIdReservation() == 0) {
+	    		reservationService.addReservation(reservation);
+	    			
+	    		}else {
+	    			reservationService.updateReservation(reservation);
+	    	}
+			return new ModelAndView("redirect:formReservation");
+
+	    }
+		
 	
 
 }

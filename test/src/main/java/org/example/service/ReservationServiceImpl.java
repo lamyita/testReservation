@@ -43,7 +43,8 @@ public class ReservationServiceImpl  implements ReservationService{
 	}
 
 	public Reservation updateReservation(Reservation Reservation) {
-		return null;
+		return reservationDao.updateReservation(Reservation);
+		
 	}
 
 	public ReservationDao getReservationDao() {
