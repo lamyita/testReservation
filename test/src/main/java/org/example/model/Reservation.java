@@ -1,6 +1,8 @@
 package org.example.model;
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Collection;
 import java.util.Date;
 
@@ -9,7 +11,12 @@ public class Reservation {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long idReservation;
+    
+//    @DateTimeFormat(pattern = "yyyy-mm-dd")
+//    @Temporal(TemporalType.DATE)
+
     private Date dateReservation;
+    
     private boolean confirmation;
     @OneToMany(mappedBy = "reservation")
     private Collection<NbrPlace> nbrPlacetablesByIdReservation;

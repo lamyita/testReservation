@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+        <a href="newReservation">New Reservation</a>
 <table class="table table-dark">
   <thead>
     <tr>
@@ -42,7 +42,7 @@
  
                     <td>${reservation.idReservation}</td>
                     <td>${reservation.dateReservation}</td>
-                    <td>${employee.confirmation}</td>
+                    <td>${reservation.confirmation}</td>
                  
                 </tr>
             </c:forEach>
