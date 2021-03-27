@@ -15,32 +15,26 @@
 <table class="table table-dark">
   <thead>
     <tr>
+    
+      
       <th scope="col">id_Reservation</th>
+      <!--   <th scope="col">nom</th>
+     <th scope="col">prenom</th> -->
       <th scope="col">date_Reservation</th>
     
       <th scope="col">Confirmation</th>
     </tr>
   </thead>
   <tbody>
- <%--  <c:forEach var="reservation" items="${reservationList}">
- 
-  <c:forEach var="reservation" items="${reservationList.rows}">
- 
-    <c:out value="${reservation.idReservation}" />
- 
-    <c:out value="${reservation.dateReservation}" />
- 
- 
-</c:forEach> --%>
-<%--     </c:forEach>
 
- --%>     
- 
  
  <c:forEach var="reservation" items="${listReservation}">
                 <tr>
  
                     <td>${reservation.idReservation}</td>
+                    <%-- <td>${Users.nom}</td>
+                    <td>${Users.prenom}</td>
+                     --%>
                     <td>${reservation.dateReservation}</td>
                     <td>${reservation.confirmation}</td>
                  

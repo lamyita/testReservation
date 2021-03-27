@@ -6,9 +6,14 @@ import java.io.Serializable;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "users")
-
+@NamedQuery(query = "SELECT u FROM Users u where u.email = :email", name = "userByEmail")
 public class Users implements Serializable {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long idUsers;
@@ -133,6 +138,8 @@ public class Users implements Serializable {
 		return "Users [idUsers=" + idUsers + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", password="
 				+ password + ", admin=" + admin + ", apprenant=" + apprenant + ", roles=" + roles + "]";
 	}
+
+	
 
 
 }

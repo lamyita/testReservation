@@ -4,9 +4,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.example.dao.UserDao;
+import org.example.model.Roles;
 import org.example.model.Users;
 import org.example.repository.UserRepository;
 import org.example.repository.UserRepositoryImpl;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -56,4 +59,21 @@ public class UserServiceImpl implements UserService  {
 	        return userRepository.validate(email,password);
 	    }
 
+		@Override
+		public Roles getByRole(Long id) throws ClassNotFoundException, SQLException {
+			return userRepository.getByRole(id);
+		}
+
+
+		@Override
+		public Users getByEmail(String email) throws ClassNotFoundException, SQLException {
+			return userRepository.getByEmail(email);
+		}
+
+
+	   
+
+		
+		
+	
 }

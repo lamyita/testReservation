@@ -16,6 +16,12 @@
 
 		<form:form action="saveReservation" method="post"
 			modelAttribute="reservation">
+						<!-- <td>nom:</td>
+			
+			  <input name='nom' placeholder='nom' type='text' required>
+			  			<td>prenom:</td> -->
+			  
+	  <input name='prenom' placeholder='prenom' type='text' required>
 			<td>Date:</td>
 			<form:input type="date" id="start" name="trip-start"
 				value="2021-07-22" min="2021-01-01" max="2022-12-31"
