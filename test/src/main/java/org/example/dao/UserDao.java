@@ -12,6 +12,6 @@ public interface UserDao {
     public void dropUser(long id);
     public Users updateUser(Users user);
     
-    
+    public Roles getRoleById(long id);
 
 }

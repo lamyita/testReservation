@@ -1,7 +1,6 @@
 package org.example.repository;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.persistence.NoResultException;
 
@@ -12,7 +11,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
@@ -77,15 +75,14 @@ public class UserRepositoryImpl implements UserRepository {
         
         
         try {
-
-//	       
+      
             Users user = (Users) query.uniqueResult();
             return user;
         }
         catch (NoResultException  e){
             return null;
         }
-//        
+       
 	
 	
 	

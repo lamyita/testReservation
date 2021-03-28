@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 
 import org.example.model.Etudiant;
+import org.example.model.Roles;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Component;
@@ -121,7 +122,13 @@ public class UserDaoImpl implements UserDao{
     
     
     
- 
+    @Override
+	@Transactional
+	public Roles getRoleById(long id) {
+        session = HibernateUtil.getSessionFactory().openSession();
+	        Roles role = (Roles) session.get(Roles.class, id);
+	        return role;
+	}
     
     
     

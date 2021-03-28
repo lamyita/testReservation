@@ -54,6 +54,8 @@ public class HomeController {
 	      return "register";
 	  }
      
+
+     
      
 //	//	private EtudiantService etudiantService;
 
@@ -74,10 +76,7 @@ public class HomeController {
 	      return "formreservation";
 	  }
      
-     @RequestMapping(value = "/editReservation", method = RequestMethod.GET)
-	   public String editReservation() {
-	      return "editReservation";
-	  }
+   
      
    //get login page
  	@RequestMapping(value="/login")
@@ -85,8 +84,24 @@ public class HomeController {
 		model.addAttribute("user", user);
  		return "login";
 	}
+ 	
+ 	
+ 	  @RequestMapping(value = "/editReservation", method = RequestMethod.GET)
+	   public String editReservation() {
+	      return "editReservation";
+	  }
   
      
+ 	  
+ 	 @RequestMapping(value = "/profileUser", method = RequestMethod.GET)
+	   public String profileUser() {
+	      return "profileUser";
+	  }
+   
+   
+ 	  
+ 	  
+ 	  
 //     
 //     @Controller
 //     public class HomeController {

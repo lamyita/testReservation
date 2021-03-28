@@ -39,8 +39,10 @@
 
 	  <input name='email' placeholder='E-Mail Address' type='text' required>
 	  <input id='pw' name='password' placeholder='Password' type='password' required>
+	  <input type="password" type="password" name="pass" id="pass" placeholder="Repeat your password"/>
 
 	  <input class='animated' type='submit' value='register'>
+	  
 	  <a class='forgot' href='login'>Already have an account?</a>
 	</div>
 	</form>

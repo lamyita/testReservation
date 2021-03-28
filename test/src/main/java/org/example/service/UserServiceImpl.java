@@ -58,6 +58,7 @@ public class UserServiceImpl implements UserService  {
 	    public boolean validate(String email, String password) throws ClassNotFoundException, SQLException {
 	        return userRepository.validate(email,password);
 	    }
+	    
 
 		@Override
 		public Roles getByRole(Long id) throws ClassNotFoundException, SQLException {

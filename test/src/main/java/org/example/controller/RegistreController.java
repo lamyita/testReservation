@@ -4,10 +4,12 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.example.dao.UserDao;
 
 import org.example.dao.UserDaoImpl;
+import org.example.model.Roles;
 import org.example.model.Users;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +42,49 @@ public class RegistreController {
 	}
 	
 	//controller method to process the registration form
+//	@RequestMapping(value ="/Register", method = RequestMethod.POST)
+//	public String Register(@ModelAttribute("users") Users users) {
+//		userDao.createUser(users);
+//		System.out.println("register done");
+//		return "redirect:/";
+//	}
+//	
+//	
+	
+	
+	
 	@RequestMapping(value ="/Register", method = RequestMethod.POST)
-	public String Register(@ModelAttribute("users") Users users) {
-		userDao.createUser(users);
+//	public String login(HttpServletRequest request, HttpSession session, Model model)
+
+	public String Register(HttpServletRequest request, HttpSession session, @ModelAttribute("users") Users users) {
+		String pasword = request.getParameter("pass");
+		if(pasword.equals(users.getPassword())){
+		Roles role = userDao.getRoleById(2);
+		System.out.println(role);
+
+				users.setRoles(role);	
+			userDao.createUser(users);
+
+			
 		System.out.println("register done");
 		return "redirect:/";
 	}
+	
+	else
+		return "login";
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
