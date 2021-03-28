@@ -3,8 +3,10 @@ package org.example.dao;
 import java.util.List;
 
 import org.example.model.Apprenant;
+import org.example.model.Roles;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
+import org.springframework.transaction.annotation.Transactional;
 
 public class ApprenantDaoImpl  implements ApprenantDao {
        Session session;
@@ -39,5 +41,15 @@ public class ApprenantDaoImpl  implements ApprenantDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	
+	 @Override
+		@Transactional
+		public Roles getRoleById(long id) {
+	        session = HibernateUtil.getSessionFactory().openSession();
+		        Roles role = (Roles) session.get(Roles.class, id);
+		        return role;
+		}
 
 }

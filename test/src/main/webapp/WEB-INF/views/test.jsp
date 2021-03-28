@@ -55,7 +55,7 @@
       
 <td><input type="date" id="start" name="trip-start"
        value="2021-01-01"
-       min="2022-12-30" max="2018-12-31"></td>
+       min="2021-12-30" max="2022-12-31"></td>
       
       <td>Otto</td>
       <td></td>
