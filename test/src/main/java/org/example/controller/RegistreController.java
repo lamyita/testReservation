@@ -1,22 +1,10 @@
 package org.example.controller;
 
-import java.sql.SQLException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.example.dao.ApprenantDao;
 import org.example.dao.ApprenantDaoImpl;
-import org.example.dao.UserDao;
-
-import org.example.dao.UserDaoImpl;
 import org.example.model.Apprenant;
 import org.example.model.Roles;
 import org.example.model.Users;
-import org.example.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,7 +20,7 @@ public class RegistreController {
 //	private 	UserDao userDao = new UserDaoImpl(); 
 //	
 
-    //@Autowired
+//    @Autowired
     private ApprenantDao userDao = new ApprenantDaoImpl();
 	
 	//controller method to show the registration form
@@ -57,6 +45,7 @@ public class RegistreController {
 //	}
 //	
 //	
+	
 	
 	
 	

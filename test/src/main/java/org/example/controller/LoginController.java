@@ -81,6 +81,15 @@ public class LoginController {
 		}
 		return null;
 	}
+	
+	
+	
+	@RequestMapping("/logOut")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        System.out.println("logout succeed");
+        return "redirect:/login";
+    }
 
 //	String email = Request.getParameter("userEmail");
 //    String password = request.getParameter("userPassword");

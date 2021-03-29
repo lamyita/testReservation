@@ -1,19 +1,17 @@
 package org.example.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
-import org.example.dao.ReservationDao;
-import org.example.dao.ReservationDaoImpl;
 import org.example.dao.UserDao;
 import org.example.dao.UserDaoImpl;
 import org.example.model.Reservation;
-import org.example.model.Users;
 import org.example.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller

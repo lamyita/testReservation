@@ -11,15 +11,13 @@
 
 </head>
 <body>
-        <a href="newReservation">New Reservation</a>
 <table class="table table-dark">
   <thead>
     <tr>
     
       
       <th scope="col">id_Reservation</th>
-      <!--   <th scope="col">nom</th>
-     <th scope="col">prenom</th> -->
+     
       <th scope="col">date_Reservation</th>
     
       <th scope="col">Confirmation</th>
