@@ -3,6 +3,7 @@ package org.example.dao;
 import java.util.List;
 
 
+
 import org.example.model.Reservation;
 import org.example.model.Users;
 import org.example.util.HibernateUtil;
@@ -80,7 +81,6 @@ public class ReservationDaoImpl  implements ReservationDao  {
     	  reservationUpdate.setIdReservation(reservation.getIdReservation());
     	  reservationUpdate.setDateReservation(reservation.getDateReservation());
           reservationUpdate.setConfirmation(reservation.isConfirmation());
-          reservationUpdate.setNbrPlacetablesByIdReservation(reservation.getNbrPlacetablesByIdReservation());
           reservationUpdate.setApprenant(reservation.getApprenant());
     	  
     	  	System.out.println("Reservation updated");

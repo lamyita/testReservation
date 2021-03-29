@@ -3,6 +3,8 @@ package org.example.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.example.dao.UserDao;
 import org.example.dao.UserDaoImpl;
 import org.example.model.Reservation;
@@ -38,6 +40,7 @@ public class ReservationContoller {
 	   public ModelAndView listReservation(ModelAndView theModel) throws IOException {
 		List<Reservation> listReservation = reservationService.getAllReservation();
 		theModel.addObject("listReservation", listReservation);
+		
 		theModel.setViewName("reservation");
         return theModel;
 	
@@ -53,17 +56,37 @@ public class ReservationContoller {
            return theModel;
        }
 	   
+	   
 
 	   @RequestMapping(value = "/saveReservation", method = RequestMethod.POST)
        public ModelAndView saveReservation(@ModelAttribute Reservation reservation) {
 		   reservationService.addReservation(reservation);
 //		   userDao.getAllUsers(user);
+//		   userDao.getUserById(id);
    	        System.out.println("all is good");
 
            return new ModelAndView("redirect:/");
        }
 
 	   
+	   
+	   
+	   @RequestMapping(value = "deleteReservation", method = RequestMethod.POST)
+       public String deleteReservation(HttpServletRequest request){
+            Long id = Long.valueOf(request.getParameter("id"));
+            reservationService.deleteReservation(id);
+            return "redirect:/reservation";
+       }
+
+
+    @RequestMapping(value = "AccpterReservation", method = RequestMethod.POST)
+    public String accepterReservation(HttpServletRequest request){
+        Long id = Long.valueOf(request.getParameter("id"));
+        Reservation reservation =reservationService.getReservation(id);
+        reservation.setConfirmation(true);
+        reservationService.updateReservation(reservation);
+        return "redirect:/reservation";
+    }
 	   
 	   
 //

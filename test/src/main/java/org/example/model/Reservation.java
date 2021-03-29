@@ -18,8 +18,11 @@ public class Reservation {
     private Date dateReservation;
     
     private boolean confirmation;
-    @OneToMany(mappedBy = "reservation")
-    private Collection<NbrPlace> nbrPlacetablesByIdReservation;
+    
+    private String typeReservation;
+//    @OneToMany(mappedBy = "reservation")
+//    private Collection<NbrPlace> nbrPlacetablesByIdReservation;
+    
     @ManyToOne
     @JoinColumn(name = "idUsers")
     
@@ -28,21 +31,28 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Date dateReservation, boolean confirmation, Collection<NbrPlace> nbrPlacetablesByIdReservation, Apprenant apprenant) {
+    public Reservation(Date dateReservation, boolean confirmation, Apprenant apprenant) {
         this.dateReservation = dateReservation;
         this.confirmation = confirmation;
-        this.nbrPlacetablesByIdReservation = nbrPlacetablesByIdReservation;
         this.apprenant = apprenant;
     }
     
     
 
-    public Reservation(Date dateReservation, boolean confirmation,Apprenant apprenant) {
-        this.dateReservation = dateReservation;
-        this.apprenant = apprenant;
+    public Reservation(Date dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
+		super();
+		this.dateReservation = dateReservation;
+		this.confirmation = confirmation;
+		this.typeReservation = typeReservation;
+		this.apprenant = apprenant;
+	}
 
-      
-    }
+//	public Reservation(Date dateReservation, boolean confirmation,Apprenant apprenant) {
+//        this.dateReservation = dateReservation;
+//        this.apprenant = apprenant;
+//
+//      
+//    }
     
     public Reservation(Long idReservation, Date dateReservation, boolean confirmation, Apprenant apprenant) {
         this.idReservation = idReservation;
@@ -85,13 +95,13 @@ public class Reservation {
         this.confirmation = confirmation;
     }
 
-    public Collection<NbrPlace> getNbrPlacetablesByIdReservation() {
-        return nbrPlacetablesByIdReservation;
-    }
-
-    public void setNbrPlacetablesByIdReservation(Collection<NbrPlace> nbrPlacetablesByIdReservation) {
-        this.nbrPlacetablesByIdReservation = nbrPlacetablesByIdReservation;
-    }
+//    public Collection<NbrPlace> getNbrPlacetablesByIdReservation() {
+//        return nbrPlacetablesByIdReservation;
+//    }
+//
+//    public void setNbrPlacetablesByIdReservation(Collection<NbrPlace> nbrPlacetablesByIdReservation) {
+//        this.nbrPlacetablesByIdReservation = nbrPlacetablesByIdReservation;
+//    }
 
     public Apprenant getApprenant() {
         return apprenant;
@@ -101,10 +111,18 @@ public class Reservation {
         this.apprenant = apprenant;
     }
 
+	public String getTypeReservation() {
+		return typeReservation;
+	}
+
+	public void setTypeReservation(String typeReservation) {
+		this.typeReservation = typeReservation;
+	}
+
 	@Override
 	public String toString() {
 		return "Reservation [idReservation=" + idReservation + ", dateReservation=" + dateReservation
-				+ ", confirmation=" + confirmation + ", nbrPlacetablesByIdReservation=" + nbrPlacetablesByIdReservation
+				+ ", confirmation=" + confirmation + ", nbrPlacetablesByIdReservation=" 
 				+ ", apprenant=" + apprenant + "]";
 	}
     

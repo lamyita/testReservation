@@ -1,17 +1,26 @@
-//package org.example.test;
+package org.example.test;
+
+
+import java.sql.SQLException;
+import java.util.Date;
+
+import org.example.model.Apprenant;
+import org.example.model.Reservation;
+import org.example.model.Roles;
+import org.example.util.HibernateUtil;
+import org.hibernate.Session;
 //
-//
-//import java.sql.SQLException;
-//import java.util.Date;
-//
-//import org.example.model.Apprenant;
-//import org.example.model.Reservation;
-//import org.example.model.Roles;
-//
-//public class Test {
-//
-//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//
+public class Test {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		
+      Session session = HibernateUtil.getSessionFactory().openSession();
+
+      
+	}
+		
+	}
 //		
 ////		
 ////		UserDao userDao = new UserDaoImpl();
