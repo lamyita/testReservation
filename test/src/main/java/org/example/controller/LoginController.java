@@ -3,8 +3,10 @@ package org.example.controller;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.example.model.Roles;
 import org.example.model.Users;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class LoginController {
 	@Qualifier("UserService")
 	private UserService userService;
 
-	Users user;
+	static Users user;
 
 //
 //	@RequestMapping(value = "/Login", method = RequestMethod.POST)
@@ -44,43 +46,75 @@ public class LoginController {
 //			return "redirect:/login";
 //		}
 //	}
+//	 static Users user;
+	    Roles role;
 
-	@RequestMapping(value = "/Login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request, HttpSession session, Model model)
-			throws SQLException, ClassNotFoundException {
+	    @RequestMapping(value = "/Login", method = RequestMethod.POST)
+	    public String login(HttpServletRequest request, HttpServletResponse response,Model model) throws SQLException, ClassNotFoundException {
 
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		System.out.println(email);
-		System.out.println(password);
+	        String email = request.getParameter("email");
+	        String password = request.getParameter("password");
+	        System.out.println(email);
+	        System.out.println(password);
+	        if (userService.validate(email, password) == "admin") {
 
-		if (userService.validate(email, password) == true) {
-			user = userService.getByEmail(email);
+	            System.out.println("login successful");
+	            return "redirect:/reservation";
+	        } if (userService.validate(email, password) == "student") {
+	            user =userService.getByEmail(email);
 
-			session.setAttribute("userId", user.getIdUsers());
-			session.setAttribute("role", user.getRoles());
+	            HttpSession hSession = request.getSession(true);
+	            System.out.println(user.getIdUsers());
+	            hSession.setAttribute("id_user", user.getIdUsers());
+	            hSession.setAttribute("nom", user.getNom());
+	            hSession.setAttribute("prenom", user.getPrenom());
+	            String name = user.getNom();
+	            System.out.println(name);
+	            System.out.println(user.getIdUsers());
+	            model.addAttribute("user",user);
+	            System.out.println("login successful");
+	            return "redirect:/test";
+	        }else {
+	            return "redirect:/login";
+	        }
+	    }
 
-			String nom = user.getNom();
-			String prenom = user.getPrenom();
-			if (user.getRoles().getRoleType().equals("admin")) {
-				model.addAttribute("model", nom);
-				model.addAttribute("model", prenom);
-				return "redirect:/reservation";
-			}
-
-			else if(user.getRoles().getRoleType().equals("student")) {
-				model.addAttribute("model", nom);
-				model.addAttribute("model", prenom);
-				System.out.println(nom);
-				return "redirect:/test";
-			}
-
-		} else {
-			System.out.println("Compte not found");
-			return "redirect:/login";
-		}
-		return null;
-	}
+//	@RequestMapping(value = "/Login", method = RequestMethod.POST)
+//	public String login(HttpServletRequest request, HttpSession session, Model model)
+//			throws SQLException, ClassNotFoundException {
+//
+//		String email = request.getParameter("email");
+//		String password = request.getParameter("password");
+//		System.out.println(email);
+//		System.out.println(password);
+//
+//		if (userService.validate(email, password) == true) {
+//			user = userService.getByEmail(email);
+//
+//			session.setAttribute("userId", user.getIdUsers());
+//			session.setAttribute("role", user.getRoles());
+//
+//			String nom = user.getNom();
+//			String prenom = user.getPrenom();
+//			if (user.getRoles().getRoleType().equals("admin")) {
+//				model.addAttribute("model", nom);
+//				model.addAttribute("model", prenom);
+//				return "redirect:/reservation";
+//			}
+//
+//			else if(user.getRoles().getRoleType().equals("student")) {
+//				model.addAttribute("model", nom);
+//				model.addAttribute("model", prenom);
+//				System.out.println(nom);
+//				return "redirect:/test";
+//			}
+//
+//		} else {
+//			System.out.println("Compte not found");
+//			return "redirect:/login";
+//		}
+//		return null;
+//	}
 	
 	
 	

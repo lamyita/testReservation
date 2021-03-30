@@ -13,7 +13,7 @@ public interface UserService {
 	    public void save(Users user) throws ClassNotFoundException, SQLException;
 	    public void delete(Long id) throws ClassNotFoundException, SQLException;
 
-	    public boolean validate(String email,String password) throws ClassNotFoundException, SQLException;
+	    public String validate(String email,String password) throws ClassNotFoundException, SQLException;
 		   public Roles getByRole(Long id) throws ClassNotFoundException, SQLException;
 
 		    public Users getByEmail(String email) throws ClassNotFoundException, SQLException;

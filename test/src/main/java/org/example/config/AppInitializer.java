@@ -9,7 +9,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class AppInitializer implements WebApplicationInitializer  {
-
+/// définir une méthode qui est héritée de la classe parente.
 	@Override
 	public void onStartup(ServletContext container) throws ServletException {
 		

@@ -39,7 +39,17 @@ public class Reservation {
     
     
 
-    public Reservation(Date dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
+    public Reservation(Date dateReservation, Apprenant apprenant) {
+		this.dateReservation = dateReservation;
+		this.apprenant = apprenant;
+	}
+
+    
+	public Reservation(Apprenant apprenant) {
+		this.apprenant = apprenant;
+	}
+
+	public Reservation(Date dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
 		super();
 		this.dateReservation = dateReservation;
 		this.confirmation = confirmation;
@@ -125,6 +135,9 @@ public class Reservation {
 				+ ", confirmation=" + confirmation + ", nbrPlacetablesByIdReservation=" 
 				+ ", apprenant=" + apprenant + "]";
 	}
+
+
+
     
     
 }

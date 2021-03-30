@@ -6,8 +6,9 @@ import org.example.model.Roles;
 import org.example.model.Users;
 
 public interface UserRepository {
+    public String validate(String email,  String password)throws SQLException, ClassNotFoundException ;
 
-    public boolean validate(String email,  String password)throws SQLException, ClassNotFoundException;
+//    public boolean validate(String email,  String password)throws SQLException, ClassNotFoundException;
 
     public Roles getByRole(Long id)throws SQLException, ClassNotFoundException ;
     public Users getByEmail(String email) ;

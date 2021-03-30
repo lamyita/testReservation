@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.example.dao.UserDao;
 import org.example.dao.UserDaoImpl;
+import org.example.model.Apprenant;
 import org.example.model.Reservation;
 import org.example.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,7 @@ public class ReservationContoller {
 
 	   @RequestMapping(value = "/saveReservation", method = RequestMethod.POST)
        public ModelAndView saveReservation(@ModelAttribute Reservation reservation) {
+		   reservation.setApprenant((Apprenant) LoginController.user);
 		   reservationService.addReservation(reservation);
 //		   userDao.getAllUsers(user);
 //		   userDao.getUserById(id);

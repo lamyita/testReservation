@@ -1,9 +1,10 @@
 package org.example.config;
 
-import org.example.dao.EtudiantDao;
-import org.example.dao.EtudiantDaoImp;
-import org.example.service.EtudiantService;
-import org.example.service.EtudiantServiceImpl;
+//import org.example.dao.EtudiantDao;
+
+//import org.example.dao.EtudiantDaoImp;
+//import org.example.service.EtudiantService;
+//import org.example.service.EtudiantServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,15 +29,15 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 	}
 	
 	
-	@Bean(name = "etudiantService")
-    public EtudiantService getEtudiantService() {
-        return new EtudiantServiceImpl();
-    }
-	@Bean(name = "etudiantDao")
-    public EtudiantDao getEtudiantDao() {
-		
-        return new EtudiantDaoImp();
-    }
+//	@Bean(name = "etudiantService")
+//    public EtudiantService getEtudiantService() {
+//        return new EtudiantServiceImpl();
+//    }
+//	@Bean(name = "etudiantDao")
+//    public EtudiantDao getEtudiantDao() {
+//		
+//        return new EtudiantDaoImp();
+//    }
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

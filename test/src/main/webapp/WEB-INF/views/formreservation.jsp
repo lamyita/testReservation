@@ -11,6 +11,8 @@
 </head>
 <body>
 	<div align="center">
+	     <h1>Welcome <%= request.getSession().getAttribute("prenom") %></h1>
+ 
 		<h1>Reseravtion</h1>
 
 
@@ -26,8 +28,8 @@
       <label for="inputState">Type</label>
       <form:select id="inputState" class="form-control" path="typeReservation">
         <form:option value ="weekend">weekend</form:option>
-        <form:option value ="matin">matin</form:option>
-        <form:option value ="soir">soir</form:option>
+        <form:option value ="matin">morning</form:option>
+        <form:option value ="soir">evening</form:option>
       </form:select>
     </div>
 

@@ -2,6 +2,7 @@ package org.example.dao;
 
 
 import org.example.model.Users;
+
 import org.example.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 
@@ -10,7 +11,6 @@ import org.hibernate.SessionFactory;
 import java.sql.SQLException;
 
 
-import org.example.model.Etudiant;
 import org.example.model.Roles;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

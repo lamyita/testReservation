@@ -23,27 +23,25 @@
 				<th scope="col">id_Reservation</th>
 				
 				<th>Nom</th>
-				<th>Prenom</th>
-
+<!-- 				<th>Prenom</th>
+ -->
 				<th scope="col">date_Reservation</th>
 				<th scope="col">type_Reservation</th>
 
-				<th scope="col">Confirmation</th>
+			<th scope="col">Confirmation</th>
+				
 			</tr>
 		</thead>
 		<tbody>
-
-
 			<c:forEach var="reservation" items="${listReservation}">
 				<tr>
-
 					<td>${reservation.idReservation}</td>
-					<td>${Users.nom}</td>
-					<td>${Users.prenom}</td>
-
-					<td>${reservation.dateReservation}</td>
+					<td>${reservation.apprenant.nom}<td>
+<%-- 					<td><%= request.getSession().getAttribute("prenom") %></td>
+ --%>					<td>${reservation.dateReservation}</td>
 					<td>${reservation.typeReservation}</td>
-					
+<%-- 				 <td>${reservation.apprenant.nom}</td>
+ --%>				
 					<td class="d-flex flex-row">
                         <form action="deleteReservation"  method="post">
                             <input type="hidden" value="${reservation.idReservation}"  name="id" class="form-control"/>
@@ -56,21 +54,6 @@
                             </form>
                         </c:if>
                     </td>
-					<%-- 					<td>${reservation.confirmation}</td>
- --%>
-					<!-- <td>
-					
-					
-						<button type="button" class="btn btn-default btn-lg">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-							Accept
-						</button>
-						<button type="button" class="btn btn-default btn-lg">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-							Delete
-						</button>
-					</td> -->
-					
 					
 					
 					
