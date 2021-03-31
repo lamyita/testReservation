@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,88 +10,165 @@
 <link href="resources/profilUser.css" rel="stylesheet">
 
 
+
+<link rel="stylesheet" href="resources/datshboard.css">
+
+
+<link
+	href="	https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css
+	">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Google Fonts -->
+<link
+	href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Pacifico'
+	rel='stylesheet' type='text/css'>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
-<div class="container">
+	<div class="container">
 		<div class="main-body">
-		
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Reservation Youcode</a>
+			<header>
+
+				<i class="fa fa-bars"></i>
+
+				<div class="menu">
+
+					<p>Menu</p>
+
+					<ul>
+
+						<li class="active"><a href="#"><i
+								class="fa fa-line-chart"></i>Dashboard</a></li>
+
+						<li><a href="#"><i class="fa fa-folder-open"></i>New
+								Reservation</a> <span class="notification">4</span></li>
+
+						<li><a href="#"><i class="fa fa-wrench"></i>Profile</a></li>
+
+					</ul>
+
+					<p>My account</p>
+
+					<ul>
+
+						<li><a href="#"><i class="fa fa-user"></i> View Profile</a></li>
+
+
+
+						<li><a href="logOut"><i class="fa fa-sign-out"></i> Log
+								out</a></li>
+
+					</ul>
+
+				</div>
+
+				<div class="account">
+
+					<img
+						src="https://image.freepik.com/vecteurs-libre/profil-avatar-homme-icone-ronde_24640-14049.jpg" />
+					<p>
+						My account<i class="fa fa-caret-down"></i>
+					</p>
+
+				</div>
+
+				<div class="account-box">
+
+					<h3><%=request.getSession().getAttribute("prenom")%></h3>
+
+					<li><a href="profileUser"><i class="fa fa-user"></i> View
+							Profile</a></li>
+
+
+					<li><a href="logOut"><i class="fa fa-sign-out"></i> Log
+							out</a></li>
+
+				</div>
+
+			</header>
+			<aside>
+
+				<h1>YouCode</h1>
+
+				<ul>
+
+					<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+
+					<li><a href="newReservation"><i class="fa fa-folder-open"></i>New
+							Reservation</a></li>
+
+					<li><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
+
+				</ul>
+
+			</aside>
+			
+
+<div id="bodyProfile">
+				<div class="row gutters-sm">
+					<div class="col-md-4 mb-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="d-flex flex-column align-items-center text-center">
+									<img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+										alt="User" class="rounded-circle" width="150">
+									<div class="mt-3">
+										<h4>Welcome <%= request.getSession().getAttribute("prenom") %></h4>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-8">
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-sm-3">
+											<h6 class="mb-0">Full Name</h6>
+										</div>
+										<div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("prenom") %></div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<h6 class="mb-0">Email</h6>
+										</div>
+										<div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("email") %></div>
+									</div>
+									<hr>
+
+
+									<div class="row">
+										<div class="col-sm-3">
+											<h6 class="mb-0">Address</h6>
+										</div>
+										<div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("nom") %></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
 			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">About me <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="profileUser">Profile</a></li>
-						<li><a href="#">reservation historique </a></li>
-						<li><a href="newReservation"> New Reservation</a></li>
-					</ul></li>
-				<li><a href="#">Page 2</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="logOut"><span class="glyphicon glyphicon-log-out"></span>
-						LogOut</a></li>
-			</ul>
-		</div>
-	</nav>
-		
-		
-			  <div class="row gutters-sm">
-				<div class="col-md-4 mb-3">
-				  <div class="card">
-					<div class="card-body">
-					  <div class="d-flex flex-column align-items-center text-center">
-						<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User" class="rounded-circle" width="150">
-						<div class="mt-3">
-						  <h4>John Doe</h4>
-						
-						
-						</div>
-					  </div>
-					</div>
-				  </div>
-				  
-				<div class="col-md-8">
-				  <div class="card mb-3">
-					<div class="card-body">
-					  <div class="row">
-						<div class="col-sm-3">
-						  <h6 class="mb-0">Full Name</h6>
-						</div>
-						<div class="col-sm-9 text-secondary">
-						  Kenneth Valdez
-						</div>
-					  </div>
-					  <hr>
-					  <div class="row">
-						<div class="col-sm-3">
-						  <h6 class="mb-0">Email</h6>
-						</div>
-						<div class="col-sm-9 text-secondary">
-						  fip@jukmuh.al
-						</div>
-					  </div>
-					  <hr>
-					 
-					 
-					  <div class="row">
-						<div class="col-sm-3">
-						  <h6 class="mb-0">Address</h6>
-						</div>
-						<div class="col-sm-9 text-secondary">
-						  Bay Area, San Francisco, CA
-						</div>
-					  </div>
-					</div>
-				  </div>
-				 
 		</div>
 		</div>
-</div>
-</div>
-</div>
+		<!-- Compiled and minified jQuery 2.1.3 -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+		<script src="datsh.js">
+			
+		</script>
 </body>
 </html>
