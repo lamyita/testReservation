@@ -1,11 +1,6 @@
 @charset "ISO-8859-1";
 
-body{
-    margin-top:20px;
-    color: #1a202c;
-    text-align: left;
-    background-color: #e2e8f0;    
-}
+
 .main-body {
     padding: 15px;
 }
@@ -14,21 +9,25 @@ body{
 }
 
 .card {
-    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #CEE5F2;
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
+    margin-left:23%;
+    
 }
 
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
+}
+#bodyProfile{
+	margin-top:9%;
 }
 
 .gutters-sm {

@@ -6,6 +6,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top:40px;
 }
 
 .box select{
@@ -19,6 +20,7 @@
   font-size: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,.3);
   outline: none;
+ margin-left: 318PX
 }
 
 .box::before {

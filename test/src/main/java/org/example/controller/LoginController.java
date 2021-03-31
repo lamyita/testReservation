@@ -48,12 +48,15 @@ public class LoginController {
 	            hSession.setAttribute("id_user", user.getIdUsers());
 	            hSession.setAttribute("nom", user.getNom());
 	            hSession.setAttribute("prenom", user.getPrenom());
+//	            hSession.setAttribute("email", user.getEmail());
 	            String name = user.getNom();
+	          
+
 	            System.out.println(name);
 	            System.out.println(user.getIdUsers());
 	            model.addAttribute("user",user);
 	            System.out.println("login successful");
-	            return "redirect:/test";
+	            return "redirect:/newReservation";
 	        }else {
 	            return "redirect:/login";
 	        }
