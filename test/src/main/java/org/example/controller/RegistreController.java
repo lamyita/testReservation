@@ -17,10 +17,7 @@ public class RegistreController {
 	
 //	
 //	@Autowired
-//	private 	UserDao userDao = new UserDaoImpl(); 
-//	
 
-//    @Autowired
     private ApprenantDao userDao = new ApprenantDaoImpl();
 	
 	//controller method to show the registration form
@@ -36,41 +33,7 @@ public class RegistreController {
 		return "register";
 	}
 	
-	//controller method to process the registration form
-//	@RequestMapping(value ="/Register", method = RequestMethod.POST)
-//	public String Register(@ModelAttribute("users") Users users) {
-//		userDao.createUser(users);
-//		System.out.println("register done");
-//		return "redirect:/";
-//	}
-//	
-//	
 	
-	
-	
-	
-//	@RequestMapping(value ="/Register", method = RequestMethod.POST)
-////	public String login(HttpServletRequest request, HttpSession session, Model model)
-//
-//	public String Register(HttpServletRequest request, HttpSession session, @ModelAttribute("users") Users users) {
-//		String pasword = request.getParameter("pass");
-//		if(pasword.equals(users.getPassword())){
-//		Roles role = userDao.getRoleById(2);
-//		
-//		System.out.println(role);
-//
-//				users.setRoles(role);	
-//			userDao.createUser(users);
-//
-//			
-//		System.out.println("register done");
-//		return "redirect:/";
-//	}
-//	
-//	else
-//		return "login";
-//}
-//	
 	
 	@RequestMapping(value ="/Register", method = RequestMethod.POST)
     public String Register(@ModelAttribute("users") Apprenant users) {
@@ -85,6 +48,9 @@ public class RegistreController {
 	
 	
 	}
+	
+	
+	
 }
 	
 	

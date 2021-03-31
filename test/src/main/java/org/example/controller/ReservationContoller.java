@@ -20,19 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ReservationContoller {
 //	
-	@Autowired
-  	private UserDao userDao = new UserDaoImpl();
- 
-////	
-	
-//	  private static final Logger logger = Logger
-//	            .getLogger(ReservationContoller.class);
-//	 
-//	    public ReservationContoller() {
-//	        System.out.println("ReservationContoller()");
-//	    }
-	
-	
+//	@Autowired
+//  	private UserDao userDao = new UserDaoImpl();
+// 
+
 	
 	@Autowired
     private ReservationService reservationService;
@@ -63,10 +54,7 @@ public class ReservationContoller {
        public ModelAndView saveReservation(@ModelAttribute Reservation reservation) {
 		   reservation.setApprenant((Apprenant) LoginController.user);
 		   reservationService.addReservation(reservation);
-//		   userDao.getAllUsers(user);
-//		   userDao.getUserById(id);
    	        System.out.println("all is good");
-
            return new ModelAndView("redirect:/");
        }
 
@@ -91,63 +79,6 @@ public class ReservationContoller {
     }
 	   
 	   
-//
-//	   @RequestMapping(value = "/formReservation", method = RequestMethod.GET)
-//	    public ModelAndView newReserv(ModelAndView model) {
-//		   Reservation reservation = new Reservation();
-//	        model.addObject("reservation", reservation);
-//	        model.setViewName("formReservation");
-//	        return model;
-//	    }
-	   
-	   
-	   
-//	   
-//	   @RequestMapping(value = "/newReservation", method = RequestMethod.GET )
-//		public String newReservati(Model theModel) {
-//			
-//		   Reservation reservation = new Reservation();
-//			// if registered redirect the user to home
-//			// else continue
-//			theModel.addAttribute("reservation", reservation);
-//			System.out.println(reservation);
-//			return "formReservation";
-//		}
-	   
-//	   @RequestMapping(value ="/saveReservation", method = RequestMethod.POST)
-//		public String saveReservation(@ModelAttribute("reservation") Reservation reservation) {
-//
-//		   reservationDao.createReservation(reservation);
-//			System.out.println("Reservation done");
-//			return "redirect:/formReservation";
-//		}
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
 
-//	    @RequestMapping(value = "/saveReservation", method = RequestMethod.POST)
-//	    public ModelAndView saveReservation(@ModelAttribute Reservation reservation) {
-//	    	if(reservation.getIdReservation() == 0) {
-//	    		reservationService.addReservation(reservation);
-//	    			
-//	    		}else {
-//	    			reservationService.updateReservation(reservation);
-//	    	}
-//	    	 return new ModelAndView("redirect:/");
-//
-//	    }
-//		
-	
 
 }

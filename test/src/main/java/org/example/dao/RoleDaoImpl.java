@@ -3,7 +3,6 @@ package org.example.dao;
 import java.util.List;
 
 import org.example.model.Roles;
-import org.example.model.Users;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 

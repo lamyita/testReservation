@@ -1,24 +1,15 @@
 package org.example.dao;
 
 
-import org.example.model.Users;
-
-import org.example.util.HibernateUtil;
-import org.hibernate.SessionFactory;
-
-
-
-import java.sql.SQLException;
-
+import java.util.List;
 
 import org.example.model.Roles;
+import org.example.model.Users;
+import org.example.util.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 @Repository("UserDao")
 @Component
 public class UserDaoImpl implements UserDao{

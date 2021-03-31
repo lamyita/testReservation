@@ -1,8 +1,8 @@
 package org.example.dao;
 
+import java.util.List;
+
 import org.example.model.Reservation;
-import java.util.List;
-import java.util.List;
 
 
 public interface ReservationDao {

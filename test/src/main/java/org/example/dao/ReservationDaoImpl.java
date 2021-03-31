@@ -2,10 +2,7 @@ package org.example.dao;
 
 import java.util.List;
 
-
-
 import org.example.model.Reservation;
-import org.example.model.Users;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -92,15 +89,7 @@ public class ReservationDaoImpl  implements ReservationDao  {
             session.getTransaction().commit();
 	    	return reservationUpdate;
 
-    
-//	        if (userUp != null){
-//	        	userUp.setIdUsers(user.getIdUsers());
-//	        	userUp.setNom(user.getNom());
-//	        	 userUp.setNom(user.getNom());
-//	             userUp.setEmail(user.getEmail());
-//	             userUp.setPassword(user.getPassword());
-//	             userUp.setRoles(user.getRoles());
-//	         
+         
 }
 
 

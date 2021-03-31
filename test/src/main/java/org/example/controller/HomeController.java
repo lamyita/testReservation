@@ -2,9 +2,6 @@ package org.example.controller;
 
 import java.io.IOException;
 
-import java.sql.SQLException;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.example.model.Users;
@@ -15,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -57,15 +53,7 @@ public class HomeController {
      
 
      
-     
-//	//	private EtudiantService etudiantService;
 
-
- 	//@RequestMapping(value="/")
- 	////public ModelAndView test(HttpServletResponse response, ModelMap modelMap) throws IOException, ClassNotFoundException, SQLException{
- 		//modelMap.put("etudiants", etudiantService.findAll());
- 	//	return new ModelAndView("test");
-// 	}
  	
      @RequestMapping(value = "/login", method = RequestMethod.GET)
 	   public String login() {
@@ -100,51 +88,7 @@ public class HomeController {
 	  }
    
    
- 	  
- 	  
- 	  
-//     
-//     @Controller
-//     public class HomeController {
-//     	@Qualifier("UserService")
-//     	@Autowired
-//     	private UserService userService;
-//
-//     	Users user;
-//
-//
-//     	@RequestMapping(value="/")
-//     	public String test(Model model) throws IOException{
-//     		model.addAttribute("user", user);
-//     		return "home";
-//     	}
-//     	//get login page
-//     	@RequestMapping(value="/login")
-//     	public String login(Model model) throws IOException{
-//     		model.addAttribute("user", user);
-//     		return "login";
-//     	}
  	
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-	
-//	@RequestMapping(value = "/index", method = RequestMethod.GET)
-//	public String index(ModelMap modelMap) throws ClassNotFoundException, SQLException {
-//		modelMap.put("etudiants", etudiantService.findAll());
-//		return "test";
-//	}
+ 	  
+ 
 }
