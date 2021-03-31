@@ -2,7 +2,7 @@
 
 html {
   background-color: #10151B;
-  background: url(https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500) no-repeat center center fixed;
+  background: url(https://img.freepik.com/photos-gratuite/fond-mur-studio-texture-beton-bleu-grunge-vintage-vignette_1258-28381.jpg?size=626&ext=jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,7 +17,7 @@ body {
 
 h1 {
   line-height: .95;
-  color: #F0D526;
+  color: #CEE5F2;
   font-weight: 900;
   font-size: 150px;
   text-transform: uppercase;
@@ -44,7 +44,7 @@ h1 {
   width: 170px;
   height: 60px;
   padding: 18px 12px 18px 18px;;
-  border: 2px solid #F0D526;
+  border: 2px solid #CEE5F2;
   border-radius: 2px;
   background: none;
   font-size: 16px;
@@ -66,7 +66,7 @@ h1 {
 }
 
 .btn:hover {
-  background: #F0D526;
+  background: #CEE5F2;
   color: #10151B;
 }
 

@@ -55,7 +55,7 @@
                     </label>
                     
                     <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
+                        <i class="far fa-user icon-modify"></i>
                         <!-- <input type="email" placeholder="Email"> -->
                         <input name='prenom' placeholder='prenom' type='text' required>
 
@@ -67,7 +67,7 @@
 
                     </label>
                     <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
+                        <i class="fas fa-lock icon-modify"></i>
                         <input id='pw' name='password' placeholder='Password' type='password' required>
 
                     </label>
@@ -88,7 +88,7 @@
             <div class="first-column">
                 <h2 class="title title-primary">hello, friend!</h2>
                 <p class="description description-primary">Enter your personal details</p>
-                <p class="description description-primary">and start journey with us</p>
+                <p class="description description-primary">and reserve your place</p>
                 <button id="signup" class="btn btn-primary">sign up</button>
             </div>
             <div class="second-column">

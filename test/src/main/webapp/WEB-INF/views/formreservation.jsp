@@ -82,7 +82,7 @@
 
 			<h3><%= request.getSession().getAttribute("prenom") %></h3>
 
-			<li><a href="#"><i class="fa fa-user"></i> View Profile</a></li>
+			<li><a href="profileUser"><i class="fa fa-user"></i> View Profile</a></li>
 
 
 			<li><a href="logOut"><i class="fa fa-sign-out"></i> Log out</a></li>
@@ -108,10 +108,10 @@
 	</aside>
 		<div class="dashboard">
 	
-	<div align="center">
+	<div align="center" class="headSection">
 	     <h1>Welcome <%= request.getSession().getAttribute("prenom") %></h1>
  
-		<h1>Reseravtion</h1>
+		<h1>Reserve your place now</h1>
 
 
 		<form:form action="saveReservation" method="post"
@@ -123,7 +123,7 @@
 				value="2021-07-22" min="2021-01-01" max="2022-12-31"
 				path="dateReservation" />
 				  <div class="form-group col-md-4">
-      <label for="inputState">Type</label>
+      <label class="typeReser" for="inputState">Type</label>
           <div class="box">
       
       <form:select id="inputState" class="form-control" path="typeReservation">
@@ -134,7 +134,7 @@
       </div>
     </div>
 
-			<input type="submit" value="Save">
+			<input class="btnSubmit" type="submit" value="Save">
 
 		</form:form>
 
