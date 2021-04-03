@@ -127,6 +127,7 @@
 
 				<th>Last Name</th>
 				<th>First Name</th>
+					<th>Email </th>
 				<th>Action</th>
 				
 
@@ -136,11 +137,13 @@
 		<tbody>
 		
 			<c:forEach var="usersTable" items="${listUsers}">
-<%-- 			<c:if test="${usersTable.roles.roleType.equals('apprenant')}">
- --%>				<tr>
+ 			<c:if test="${usersTable.roles.roleType.equals('student')}">
+				<tr>
 			
-					<td>${usersTable.apprenant.nom}
-				  <td>${usersTable.apprenant.prenom}</td>
+					<td>${usersTable.nom}
+				  <td>${usersTable.prenom}</td>
+			  <td>${usersTable.email}</td>
+			  
 
 					<td>
 						<form action="deleteUser" method="post">
@@ -155,8 +158,7 @@
 					</td>
 
 				</tr>
-<%-- 			                                    </c:if>
- --%>				
+		  </c:if>
 			</c:forEach>
 
 
