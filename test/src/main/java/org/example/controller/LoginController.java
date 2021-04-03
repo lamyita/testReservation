@@ -48,6 +48,9 @@ public class LoginController {
 	            hSession.setAttribute("id_user", user.getIdUsers());
 	            hSession.setAttribute("nom", user.getNom());
 	            hSession.setAttribute("prenom", user.getPrenom());
+	            hSession.setAttribute("email", user.getEmail());
+	            hSession.setAttribute("password", user.getPassword());
+
 //	            hSession.setAttribute("email", user.getEmail());
 	            String name = user.getNom();
 	          

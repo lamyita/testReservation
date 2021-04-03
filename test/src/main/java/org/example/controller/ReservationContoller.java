@@ -103,12 +103,7 @@ public class ReservationContoller {
     
     
     
-	   @RequestMapping(value = "deleteUser", method = RequestMethod.POST)
-	    public String deleteUser(HttpServletRequest request) throws ClassNotFoundException, SQLException{
-		  Long id = Long.valueOf(request.getParameter("id"));
-         userService.delete(id);  
-         	return "redirect:/usersTable";
-    }
+	  
 	   
 
 

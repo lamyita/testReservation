@@ -133,28 +133,28 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Last Name</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("prenom") %></div>
+                                <div class="col-sm-9 text-secondary"> <%= request.getSession().getAttribute("prenom") %></div>
                             </div>
                             <hr>
                               <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">First Name</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("nom") %></div>
+                                <div class="col-sm-9 text-secondary"> <%= request.getSession().getAttribute("nom") %></div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("email") %></div>
+                                <div class="col-sm-9 text-secondary"> <%= request.getSession().getAttribute("email") %></div>
                             </div>
                             <hr>
                                <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Password</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">Welcome <%= request.getSession().getAttribute("password") %></div>
+                                <div class="col-sm-9 text-secondary"> <%= request.getSession().getAttribute("password") %></div>
                             </div>
                             <hr>
 
