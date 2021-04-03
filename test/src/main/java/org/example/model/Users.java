@@ -1,6 +1,10 @@
 package org.example.model;
 
 import javax.persistence.*;
+
+
+import org.hibernate.validator.constraints.Length;
+
 import java.io.Serializable;
 
 @Entity
@@ -20,7 +24,10 @@ public class Users implements Serializable {
     private String nom;
     private String prenom;
     private String email;
+    @Length(min = 8, max = 16, message = "The field must be at least 8 characters")
+//    @length(min = 8, max = 16)
     private String password;
+    
     @OneToOne (mappedBy = "users")
     private Admin admin;
     @OneToOne (mappedBy = "users")

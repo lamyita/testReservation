@@ -13,5 +13,6 @@ public interface UserDao {
     public Users updateUser(Users user);
     
     public Roles getRoleById(long id);
+    
 
 }

@@ -20,7 +20,12 @@ public class Roles implements Serializable {
     public Roles() {
     }
 
-    public Roles(String roleType, Collection<Users> users) {
+    public Roles(String roleType) {
+		super();
+		this.roleType = roleType;
+	}
+
+	public Roles(String roleType, Collection<Users> users) {
         this.roleType = roleType;
         this.users = users;
     }

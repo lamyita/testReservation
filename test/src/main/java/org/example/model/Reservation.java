@@ -12,10 +12,9 @@ public class Reservation {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long idReservation;
     
-//    @DateTimeFormat(pattern = "yyyy-mm-dd")
-//    @Temporal(TemporalType.DATE)
+//  @DateTimeFormat(pattern = "yyyy-mm-dd")
 
-    private Date dateReservation;
+    private String dateReservation;
     
     private boolean confirmation;
     
@@ -31,7 +30,7 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Date dateReservation, boolean confirmation, Apprenant apprenant) {
+    public Reservation(String dateReservation, boolean confirmation, Apprenant apprenant) {
         this.dateReservation = dateReservation;
         this.confirmation = confirmation;
         this.apprenant = apprenant;
@@ -39,7 +38,7 @@ public class Reservation {
     
     
 
-    public Reservation(Date dateReservation, Apprenant apprenant) {
+    public Reservation(String dateReservation, Apprenant apprenant) {
 		this.dateReservation = dateReservation;
 		this.apprenant = apprenant;
 	}
@@ -49,7 +48,7 @@ public class Reservation {
 		this.apprenant = apprenant;
 	}
 
-	public Reservation(Date dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
+	public Reservation(String dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
 		super();
 		this.dateReservation = dateReservation;
 		this.confirmation = confirmation;
@@ -64,7 +63,7 @@ public class Reservation {
 //      
 //    }
     
-    public Reservation(Long idReservation, Date dateReservation, boolean confirmation, Apprenant apprenant) {
+    public Reservation(Long idReservation, String dateReservation, boolean confirmation, Apprenant apprenant) {
         this.idReservation = idReservation;
         this.dateReservation = dateReservation;
         this.confirmation = confirmation;
@@ -89,11 +88,11 @@ public class Reservation {
         this.idReservation = idReservation;
     }
 
-    public Date getDateReservation() {
+    public String getDateReservation() {
         return dateReservation;
     }
 
-    public void setDateReservation(Date dateReservation) {
+    public void setDateReservation(String dateReservation) {
         this.dateReservation = dateReservation;
     }
 
