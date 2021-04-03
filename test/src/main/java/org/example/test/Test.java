@@ -4,23 +4,32 @@ package org.example.test;
 import java.sql.SQLException;
 import java.util.Date;
 
+import org.example.dao.ApprenantDaoImpl;
+import org.example.dao.ReservationDaoImpl;
+import org.example.dao.RoleDaoImpl;
+import org.example.dao.UserDaoImpl;
 import org.example.model.Apprenant;
 import org.example.model.Reservation;
 import org.example.model.Roles;
+import org.example.model.Users;
+import org.example.repository.ReservationRepository;
+import org.example.repository.ReservationRepositoryImpl;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 //
 public class Test {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		
-		
-      Session session = HibernateUtil.getSessionFactory().openSession();
-
+//			
+//		ReservationRepository rr=new ReservationRepositoryImpl();
+//
+//		rr.getAllReservationByIdStudent(4L);
+//		System.out.println(rr.getAllReservationByIdStudent(4L)
+//);
       
 	}
 		
-	}
+}
 //		
 ////		
 ////		UserDao userDao = new UserDaoImpl();

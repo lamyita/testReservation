@@ -43,13 +43,15 @@
 
 					<ul>
 
-	<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+						<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<li ><a href="newReservation"><i class="fa fa-folder-open"></i>New
-						Reservation</a> </li>
-			<li><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
+				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
+						Reservation</a>s</li>
 
-				<li class="active"><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
+				<li  ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+            <li  ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				
+			<li class="active"><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
 
 					</ul>
 
@@ -98,13 +100,15 @@
 
 				<ul>
 
-				<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+						<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<li><a href="newReservation"><i class="fa fa-folder-open"></i>New
+				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
-			<li><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
 
-				<li class="active"><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
+				<li ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+            <li  ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				
+			<li class="active"><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
 
 
 				</ul>

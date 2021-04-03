@@ -46,3 +46,11 @@
 .box:hover::before {
 	background: #273646;
 }
+.typeReser{
+    font-size: 31px;
+    }
+    .headSectionTitle{
+         font-size: 43px;
+    padding-bottom: 20px;
+    
+    }

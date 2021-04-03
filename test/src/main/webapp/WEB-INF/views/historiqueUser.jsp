@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-<%-- <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
+ <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -8,6 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Reservation</title>
+	<link rel="stylesheet" href="resources/ReservationUserPage.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <link rel="stylesheet"
@@ -47,9 +49,9 @@
 
 				<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<liclass="active"><a href="#"><i class="fa fa-folder-open"></i>New
+				<li><a href="newReservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
-			<li><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li class="active"><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
 
 				<li><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
 
@@ -97,14 +99,13 @@
 
 		<ul>
 
-		<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+			<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<li 
-				class="active"><a href="#"><i class="fa fa-folder-open"></i>New
-						Reservation</a></li>
-			<li><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li><a href="newReservation"><i class="fa fa-folder-open"></i>New
+					Reservation</a></li>
+		<li class="active"><a href="historiqueUser"><i class="fa fa-folder-open"></i>Historique</a></li>
 
-				<li><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
+			<li><a href="profileUser"><i class="fa fa-wrench"></i>Profile</a></li>
 			
 			
 
@@ -113,37 +114,93 @@
 	</aside>
 		<div class="dashboard">
 	
-	<div align="center" class="headSection">
-	     <h1>Welcome <%= request.getSession().getAttribute("prenom") %></h1>
- 
-		<h1 class="headSectionTitle">Reserve your place now</h1>
+	
+	
+	
+	
+	
+	
+	<table class="table bordered">
+		<thead>
+			<tr>
 
 
-		<form action="saveReservation" method="post">
+
+				<!-- 				<th scope="col">id_Reservation</th>
+ -->
+				<th>Last Name</th>
+				<th>First Name</th>
+				<th scope="col">date_Reservation</th>
+				<th scope="col">type_Reservation</th>
+
+				<th scope="col">Confirmation</th>
+		
 
 
-			<td>Date:</td>
-			<input type="date" id="date" name="date"
-				value="2021-07-22" min="2021-01-01" max="2022-12-31">
-				  <div class="form-group col-md-4">
-      <label class="typeReser" for="inputState">Type</label>
-          <div class="box">
-      
-	      <select id="inputState"  class="form-control"  name="typeReservation">
-	        <option value ="weekend">weekend</option>
-	        <option value ="matin">morning</option>
-	        <option value ="soir">evening</option>
-	      </select>
-      </div>
-    </div>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="reservation" items="">
+				<tr>
+	
+					<td></td>
+					
+					<td></td>
+					<td><%-- ${reservation.dateReservation} --%></td>
+					<td><%-- ${reservation.typeReservation} --%></td>
+<%-- 					<td>${reservation.confirmation}</td>
+ --%>				<%-- 	<td>
+                        <c:if test="${reservation.confirmation == true}">
+                            <p>Confirmer</p>
+                        </c:if>
+                        <c:if test="${reservation.confirmation == false}">
+                            <p>Non confirmer</p>
+                        </c:if>
+                    </td> --%>
 
-			<input class="btnSubmit" type="submit" value="Save">
-
-		</form>
+				
 
 
-	</div>
 
+
+
+				</tr>
+			</c:forEach>
+
+
+
+
+
+
+
+		</tbody>
+	</table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 	<!-- Compiled and minified jQuery 2.1.3 -->

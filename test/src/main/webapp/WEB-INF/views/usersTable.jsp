@@ -42,16 +42,16 @@
 
 			<ul>
 
-					<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+				<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<li class="active"><a href="reservation"><i class="fa fa-folder-open"></i>New
+				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
 
-				<li  ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
-            <li ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				<li ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li class="active" ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
 				
-			<li ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
-			
+			<li  ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+				
 				
 
 			</ul>
@@ -96,20 +96,26 @@
 
 		<h1>YouCode</h1>
 
+
 		<ul>
 
-			<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+    <li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
-				<li class="active"><a href="reservation"><i class="fa fa-folder-open"></i>New
+				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
 
-				<li  ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
-            <li ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				<li ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li class="active" ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
 				
-			<li ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+			<li  ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+				
+				
+		
 			
 
 		</ul>
+		
+		
 
 	</aside>
 		<div class="dashboard">
@@ -119,70 +125,38 @@
 		<thead>
 			<tr>
 
-
-
-				<!-- 				<th scope="col">id_Reservation</th>
- -->
 				<th>Last Name</th>
 				<th>First Name</th>
-				<th scope="col">date_Reservation</th>
-				<th scope="col">type_Reservation</th>
-
-				<th scope="col">Confirmation</th>
-				<th scope="col">Action</th>
+				<th>Action</th>
+				
 
 
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="reservation" items="${listReservation}">
-				<tr>
-	
-					<td>${reservation.apprenant.nom}
-					
-					<td>${reservation.apprenant.prenom}</td>
-					<td>${reservation.dateReservation}</td>
-					<td>${reservation.typeReservation}</td>
-<%-- 					<td>${reservation.confirmation}</td>
- --%>					<td>
-                        <c:if test="${reservation.confirmation == true}">
-                            <p>Confirmer</p>
-                        </c:if>
-                        <c:if test="${reservation.confirmation == false}">
-                            <p>Non confirmer</p>
-                        </c:if>
-                    </td>
+		
+			<c:forEach var="usersTable" items="${listUsers}">
+<%-- 			<c:if test="${usersTable.roles.roleType.equals('apprenant')}">
+ --%>				<tr>
+			
+					<td>${usersTable.apprenant.nom}
+				  <td>${usersTable.apprenant.prenom}</td>
 
-					<td class="d-flex flex-row">
-<%-- 					<c:if test="${reservation.confirmation == true}">
- --%>					
-						<form action="deleteReservation" method="post">
-							<input type="hidden" value="${reservation.idReservation}"
+					<td>
+						<form action="deleteUser" method="post">
+							<input type="hidden" value="${usersTable.idUsers}"
 								name="id" class="form-control" /> <input type="submit"
-								value="Supprimer" class="btn btn-outline-danger" onclick="return confirm('Are you sure ou want to delete this Reservation?');">
+								value="Supprimer" class="btn btn-outline-danger" onclick="return confirm('Are you sure ou want to delete this User?');">
 								
 								
 						</form> 
-						
-<%-- 					</c:if>
- --%>						
-						
-						<c:if test="${reservation.confirmation == false}">
-							<form action="AccpterReservation" method="post">
-								<input type="hidden" value="${reservation.idReservation}"
-									name="id" class="form-control" /> <input type="submit"
-									value="Accepter" class="btn btn-outline-success" onclick="return confirm('Are you sure ou want to Accepte this Reservation?');">
-									
-							</form>
-						</c:if>
+	
 						
 					</td>
 
-
-
-
-
 				</tr>
+<%-- 			                                    </c:if>
+ --%>				
 			</c:forEach>
 
 

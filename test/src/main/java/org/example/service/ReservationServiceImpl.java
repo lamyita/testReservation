@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.example.dao.ReservationDao;
 import org.example.model.Reservation;
+import org.example.repository.ReservationRepository;
+import org.example.repository.ReservationRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,6 +58,17 @@ public class ReservationServiceImpl  implements ReservationService{
 	public void setReservationDao(ReservationDao reservationDao) {
 		this.reservationDao = reservationDao;
 	}
+
+	@Override
+	public List<Reservation> getAllReservationByIdStudent(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	public List<Reservation> getAllReservationByIdStudent(Long id) {
+//		
+//		return ReservationRepository.getAllReservationByIdStudent();
+//	}
 
 	
 }
