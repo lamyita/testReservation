@@ -86,9 +86,29 @@ public class HomeController {
 	   public String profileUser() {
 	      return "profileUser";
 	  }
+ 	 
    
-   
+ 	 @RequestMapping(value = "/profileAdmin", method = RequestMethod.GET)
+	   public String profileAdmin() {
+	      return "profileAdmin";
+	  }
+ 	 
  	
- 	  
- 
+
+     @RequestMapping(value = "/historiqueUser", method = RequestMethod.GET)
+	   public String historiqueUser() {
+	      return "historiqueUser";
+	  }
+     
+     @RequestMapping(value = "/historiqueAdmin", method = RequestMethod.GET)
+	   public String historiqueAdmin() {
+	      return "historiqueAdmin";
+	  }
+ 	
+     
+     @RequestMapping(value = "/usersTable", method = RequestMethod.GET)
+	   public String usersTable() {
+	      return "usersTable";
+	  }
+	
 }

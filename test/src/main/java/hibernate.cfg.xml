@@ -25,12 +25,12 @@
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
         <!-- mapping class using annotation -->
-        <mapping class="org.example.model.Users"/>
+        	<mapping class="org.example.model.Users"/>
         <mapping class="org.example.model.Roles"/>
-        <mapping class="org.example.model.Admin"/>
+       <mapping class="org.example.model.Admin"/>
         <mapping class="org.example.model.NbrPlace"/>
         <mapping class="org.example.model.Apprenant"/>
-        <mapping class="org.example.model.Reservation"/>
+        <mapping class="org.example.model.Reservation"/> 
         
         
         
