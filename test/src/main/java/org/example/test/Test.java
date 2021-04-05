@@ -21,6 +21,8 @@ public class Test {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 //			
+//Session session = HibernateUtil.getSessionFactory().openSession();
+
 //		ReservationRepository rr=new ReservationRepositoryImpl();
 //
 //		rr.getAllReservationByIdStudent(4L);

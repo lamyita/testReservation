@@ -1,7 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
  <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE>
 <html>
@@ -113,23 +113,13 @@
 
 	</aside>
 		<div class="dashboard">
-	
-	
-	
-	
-	
-	
+
 	
 	<table class="table bordered">
 		<thead>
 			<tr>
 
-
-
-				<!-- 				<th scope="col">id_Reservation</th>
- -->
-				<th>Last Name</th>
-				<th>First Name</th>
+	
 				<th scope="col">date_Reservation</th>
 				<th scope="col">type_Reservation</th>
 
@@ -140,67 +130,27 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="reservation" items="">
 				<tr>
 	
-					<td></td>
-					
-					<td></td>
-					<td><%-- ${reservation.dateReservation} --%></td>
-					<td><%-- ${reservation.typeReservation} --%></td>
-<%-- 					<td>${reservation.confirmation}</td>
- --%>				<%-- 	<td>
-                        <c:if test="${reservation.confirmation == true}">
-                            <p>Confirmer</p>
-                        </c:if>
-                        <c:if test="${reservation.confirmation == false}">
-                            <p>Non confirmer</p>
-                        </c:if>
-                    </td> --%>
-
-				
-
-
-
-
-
-				</tr>
-			</c:forEach>
-
-
-
-
-
-
-
+					<td>nom</td>
+					<td>prenom</td>
+					 <th>DateReservation</th>
+       				 <th>TypeReservation</th>
+      				  <th>Confirmation</th>
+      				  </tr>
+        <c:forEach var="reservationHistorique" items="${listReservation}">
+                <tr>
+                    <td>${reservationHistorique.apprenant.nom}</td>
+                    <td>${reservationHistorique.apprenant.prenom}</td>
+                    <td>${reservationHistorique.dateReservation}</td>
+                    <td>${reservationHistorique.typeReservation}</td>
+                    <td>${reservationHistorique.confirmation}</td>
+                  
+                </tr>
+            </c:forEach>
 		</tbody>
 	</table>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 
 	<!-- Compiled and minified jQuery 2.1.3 -->

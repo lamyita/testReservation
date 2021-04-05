@@ -44,20 +44,25 @@
                         </a>
                     </ul>
                 </div><!-- social media -->
+                  <c:if test="${!(msg1 == null) }" var="test">
+						<div>
+							<p><c:out value="${msg1}"></c:out> </p>
+						</div>
+	</c:if>
                 <p class="description description-second">or use your email for registration:</p>
                     <form  class="form" action="Register" method="post">
 
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
                         <!-- <input type="text" placeholder="Name"  name="email"> -->
-                        <input name='nom' placeholder='nom' type='text' required>
+                        <input name='nom' placeholder='LastName' type='text' required>
 
                     </label>
                     
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
                         <!-- <input type="email" placeholder="Email"> -->
-                        <input name='prenom' placeholder='prenom' type='text' required>
+                        <input name='prenom' placeholder='firstName' type='text' required>
 
                     </label>
 
@@ -86,13 +91,13 @@
         </div><!-- first content -->
         <div class="content second-content">
             <div class="first-column">
-                <h2 class="title title-primary">hello, friend!</h2>
+                <h2 class="title title-primary">hello, Youcoder!</h2>
                 <p class="description description-primary">Enter your personal details</p>
                 <p class="description description-primary">and reserve your place</p>
                 <button id="signup" class="btn btn-primary">sign up</button>
             </div>
             <div class="second-column">
-                <h2 class="title title-second">sign in to developer</h2>
+                <h2 class="title title-second">sign in to Youcode Reservation</h2>
                 <div class="social-media">
                     <ul class="list-social-media">
                         <a class="link-social-media" href="#">
@@ -112,9 +117,14 @@
                         </a>
                     </ul>
                 </div><!-- social media -->
+                <c:if test="${!(msg == null) }" var="test">
+						<div>
+							<p><c:out value="${msg}"></c:out> </p>
+						</div>
+					</c:if>
                 <p class="description description-second">or use your email account:</p>
                     <form  class="form" action="Login" method="post">
-
+					
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
                         <input id="user" type="email" class="form-control"  name="email" required/>
@@ -128,7 +138,7 @@
                     </label>
                 
                     <a class="password" href="#">forgot your password?</a>
-                    <button class="btn btn-second">sign in</button>
+                    <button  class="btn btn-second" >sign in</button>
  
                 
                 </form>

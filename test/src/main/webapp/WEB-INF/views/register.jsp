@@ -34,6 +34,8 @@
 
 	<div class='login'>
 	  <h2>Register</h2>
+	  
+	
 	  <input name='nom' placeholder='nom' type='text' required>
 	  <input name='prenom' placeholder='prenom' type='text' required>
 

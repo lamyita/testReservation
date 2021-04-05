@@ -18,7 +18,7 @@ public interface ReservationService {
 	 
 	    public Reservation updateReservation(Reservation Reservation);
 	    
-	    public List<Reservation> getAllReservationByIdStudent(Long id);
+//	    public List<Reservation> getAllReservationByIdStudent(Long id);
 
 	    
 }
