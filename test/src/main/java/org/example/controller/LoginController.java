@@ -61,7 +61,8 @@ public class LoginController {
 	            System.out.println("login successful");
 	            return "redirect:/newReservation";
 	        }else {
-	            return "redirect:/login";
+	        	model.addAttribute("msg", "email or password is not correct");
+	            return "login";
 	        }
 	    }
 

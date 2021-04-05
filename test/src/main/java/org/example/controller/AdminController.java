@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+//controller annotation used to implement Web Application
 @Controller
 public class AdminController {
 
 	@Autowired
 	private UserService userService ;
+	
+	
 	
 	
 	@RequestMapping(value = "/usersTable" )
