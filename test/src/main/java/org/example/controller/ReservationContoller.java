@@ -3,29 +3,31 @@ package org.example.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.example.model.Apprenant;
 import org.example.model.Reservation;
 import org.example.model.Users;
+import org.example.repository.ReservationRepository;
 import org.example.service.ReservationService;
 import org.example.service.UserService;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ReservationContoller {
-//	
+
+	
+	private static final int Reservation = 0;
 //	@Autowired
 //  	private UserDao userDao = new UserDaoImpl();
 // 
@@ -35,6 +37,11 @@ public class ReservationContoller {
 	@Autowired
     private ReservationService reservationService;
 	
+
+	
+//	@Autowired
+//	private ReservationRepository reservationRepository;
+//	
 	@RequestMapping(value = "/reservation", method = RequestMethod.GET )
 	   public ModelAndView listReservation(ModelAndView theModel) throws IOException, ClassNotFoundException, SQLException {
 		List<Reservation> listReservation = reservationService.getAllReservation();
@@ -100,11 +107,6 @@ public class ReservationContoller {
         return "redirect:/reservation";
     }
     
-    
-    
-    
-	  
-	   
-
+ 
 
 }

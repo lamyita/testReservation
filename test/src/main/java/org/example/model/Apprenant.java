@@ -37,6 +37,11 @@ public class Apprenant extends Users implements Serializable {
 		this.users = users;
 	}
     
-    
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+	public void setReservation(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }
 

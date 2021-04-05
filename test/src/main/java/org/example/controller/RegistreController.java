@@ -36,18 +36,22 @@ public class RegistreController {
 	
 	
 	@RequestMapping(value ="/Register", method = RequestMethod.POST)
-    public String Register(@ModelAttribute("users") Apprenant users) {
+    public String Register(@ModelAttribute("users") Apprenant users, Model model) {
         //UserDao userDao = new UserDaoImpl();
         Roles role=new Roles();
         role.setIdRole(2L);
         users.setRoles(role);
         userDao.creatApprenant(users);
         System.out.println("register done");
-        return "redirect:/login";
+        model.addAttribute("msg1", "Register Done");
+        return "login";
 	
 	
 	
 	}
+	
+	
+	
 	
 	
 	

@@ -36,6 +36,8 @@ public class Users implements Serializable {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Roles roles;
+    
+//    private boolean confirmationStud = false;
 
     public Users() {
     }
