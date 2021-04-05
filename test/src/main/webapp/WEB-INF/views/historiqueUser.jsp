@@ -118,9 +118,11 @@
 	<table class="table bordered">
 		<thead>
 			<tr>
+ <th>First Name</th>
 
+									 <th>First Name</th>
+					 <th>DateReservation</th>
 	
-				<th scope="col">date_Reservation</th>
 				<th scope="col">type_Reservation</th>
 
 				<th scope="col">Confirmation</th>
@@ -130,14 +132,7 @@
 			</tr>
 		</thead>
 		<tbody>
-				<tr>
-	
-					<td>nom</td>
-					<td>prenom</td>
-					 <th>DateReservation</th>
-       				 <th>TypeReservation</th>
-      				  <th>Confirmation</th>
-      				  </tr>
+			
         <c:forEach var="reservationHistorique" items="${listReservation}">
                 <tr>
                     <td>${reservationHistorique.apprenant.nom}</td>

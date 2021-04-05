@@ -156,13 +156,13 @@
 					<td class="d-flex flex-row">
 <%-- 					<c:if test="${reservation.confirmation == true}">
  --%>					
-						<form action="deleteReservation" method="post">
+					<%-- 	<form action="deleteReservation" method="post">
 							<input type="hidden" value="${reservation.idReservation}"
 								name="id" class="form-control" /> <input type="submit"
 								value="Supprimer" class="btn btn-outline-danger" onclick="return confirm('Are you sure ou want to delete this Reservation?');">
 								
 								
-						</form> 
+						</form>  --%>
 						
 <%-- 					</c:if>
  --%>						

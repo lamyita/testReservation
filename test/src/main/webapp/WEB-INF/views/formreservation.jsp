@@ -113,6 +113,7 @@
 	</aside>
 		<div class="dashboard">
 	
+	
 	<div align="center" class="headSection">
 	     <h1>Welcome <%= request.getSession().getAttribute("prenom") %></h1>
  
