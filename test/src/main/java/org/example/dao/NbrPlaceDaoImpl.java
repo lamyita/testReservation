@@ -23,7 +23,7 @@ public class NbrPlaceDaoImpl implements NbrPlaceDao{
         Transaction transaction = null;
         try {
 
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();  //SessionFactory in Hibernate is responsible for the creation of Session objects.
             transaction = session.beginTransaction();
             session.persist(nbrPlace);
             transaction.commit();

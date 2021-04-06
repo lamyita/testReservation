@@ -16,7 +16,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+/* pour représenter une meilleure pratique. 
+ * Par exemple, 
+ * vous pouvez appeler directement une classe DAO pour conserver un objet dans votre base de données,
+ *  Il est très bon d'appeler une classe de service qui appelle un DAO*/
+
+
+
 @Service("UserService")
+
+///// @Component (en pratique, ce sont deux implémentations différentes de la même interface
 //@Component("UserService")
 public class UserServiceImpl implements UserService  {
 	

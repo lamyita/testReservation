@@ -14,13 +14,16 @@ import org.example.model.Roles;
 import org.example.model.Users;
 import org.example.repository.ReservationRepository;
 import org.example.repository.ReservationRepositoryImpl;
+import org.example.service.SendMail;
 import org.example.util.HibernateUtil;
 import org.hibernate.Session;
 //
 public class Test {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-//			
+		
+//	SendMail.sendEmail("bmarzak@simplon.co", "message from test ");
+		
 //Session session = HibernateUtil.getSessionFactory().openSession();
 
 //		ReservationRepository rr=new ReservationRepositoryImpl();

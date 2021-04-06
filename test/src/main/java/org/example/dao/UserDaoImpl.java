@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 @Repository("UserDao")
-@Component
+//@Component
 public class UserDaoImpl implements UserDao{
 	Session session;
 
@@ -99,6 +99,7 @@ public class UserDaoImpl implements UserDao{
              userUp.setEmail(user.getEmail());
              userUp.setPassword(user.getPassword());
              userUp.setRoles(user.getRoles());
+//             userUp.setConfirmationStud(user.isConfirmationStud());
          
             System.out.println("User updated");
         }else{

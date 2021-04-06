@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-    
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>historique Admin</title>
-</head>
+<title>Admin Datshbord</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="resources/reservationAdminPage.css">
+	
+	
 <link rel="stylesheet" href="resources/datshboard.css">
 
 
@@ -24,6 +30,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet"
 		href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
 <body>
 	<header>
 
@@ -40,10 +47,12 @@
 				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
 
-				<li  class="active"><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
-            <li  ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				<li ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li class="active" ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
 				
-			<li ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+			<li  ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+				
+				
 
 			</ul>
 
@@ -75,7 +84,7 @@
 
 			<h3><%= request.getSession().getAttribute("prenom") %></h3>
 
-			<li><a href="profileUser"><i class="fa fa-user"></i> View Profile</a></li>
+			<li><a href="profileAdmin"><i class="fa fa-user"></i> View Profile</a></li>
 
 
 			<li><a href="logOut"><i class="fa fa-sign-out"></i> Log out</a></li>
@@ -87,22 +96,83 @@
 
 		<h1>YouCode</h1>
 
+
 		<ul>
-		<li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
+
+    <li class="active"><a href="#"><i class="fa fa-line-chart"></i>Dashboard</a></li>
 
 				<li ><a href="reservation"><i class="fa fa-folder-open"></i>New
 						Reservation</a> </li>
 
-				<li  class="active"><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
-            <li  ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
+				<li ><a href="historiqueAdmin"><i class="fa fa-folder-open"></i>Historique</a></li>
+			<li class="active" ><a href="usersTable"><i class="fa fa-folder-open"></i>Users</a></li>
 				
-			<li ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+			<li  ><a href="profileAdmin"><i class="fa fa-wrench"></i>Profile</a></li>
+				
+				
+		
+			
+
 		</ul>
+		
+		
 
 	</aside>
 		<div class="dashboard">
+<div class="container">
+
+	<table class="table bordered">
+		<thead>
+			<tr>
+
+				<th>Last Name</th>
+				<th>First Name</th>
+					<th>Email </th>
+				<th>Action</th>
+				
+
+
+			</tr>
+		</thead>
+		<tbody>
 		
-		
+			<c:forEach var="usersAccp" items="${listUsers}">
+ 			<c:if test="${usersAccp.roles.roleType.equals('student')}">
+ 			<%-- <c:if test="${usersAccp.confirmationStud == false}"> --%>
+				<tr>
+			
+					<td>${usersAccp.nom}
+				  	<td>${usersAccp.prenom}</td>
+			 		<td>${usersAccp.email}</td>
+			  
+
+					<td>
+						<%-- <form action="deleteUser" method="post">
+							<input type="hidden" value="${usersTable.idUsers}"
+								name="id" class="form-control" /> <input type="submit"
+								value="Supprimer" class="btn btn-outline-danger" onclick="return confirm('Are you sure ou want to delete this User?');">
+								
+								
+						</form> 
+	 --%>
+						
+					</td>
+
+				</tr>
+				</c:if>
+<%-- 		  </c:if>
+ --%>			</c:forEach>
+
+
+
+
+
+
+
+		</tbody>
+	</table>
+	</div>
+	
 		<!-- Compiled and minified jQuery 2.1.3 -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -112,6 +182,7 @@
 	<script src="datsh.js">
 		
 	</script>
-
 </body>
+
+
 </html>

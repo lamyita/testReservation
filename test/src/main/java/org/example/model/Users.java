@@ -6,8 +6,12 @@ import javax.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
+/* ORM Object Relational Mapping qui permet de faciliter le développement.
+ *  Hibernate permet  représenter une base de données en objets Java et vice versa. */
 
-@Entity
+
+
+@Entity  ////annotation marks this class as an entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "users")
 @NamedQuery(query = "SELECT u FROM Users u where u.email = :email", name = "userByEmail")
@@ -18,18 +22,18 @@ public class Users implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+   @GeneratedValue (strategy = GenerationType.IDENTITY) //annotation specifies that a value will be automatically generated for that field. 
     @Column(name = "user_id")
     private Long idUsers;
     private String nom;
     private String prenom;
     private String email;
     @Length(min = 8, max = 16, message = "The field must be at least 8 characters")
-//    @length(min = 8, max = 16)
     private String password;
     
     @OneToOne (mappedBy = "users")
     private Admin admin;
+    
     @OneToOne (mappedBy = "users")
     private Apprenant apprenant;
 
@@ -37,12 +41,24 @@ public class Users implements Serializable {
     @JoinColumn(name = "role_id")
     private Roles roles;
     
-//    private boolean confirmationStud = false;
+//   private boolean confirmationStud = false;
 
     public Users() {
     }
 
-    public Users( String nom, String prenom, String email, String password, Admin admin, Apprenant apprenant, Roles roles) {
+    
+//    public Users(String nom, String prenom, String email, String password, Roles roles, boolean confirmationStud) {
+//		super();
+//		this.nom = nom;
+//		this.prenom = prenom;
+//		this.email = email;
+//		this.password = password;
+//		this.roles = roles;
+//		this.confirmationStud = confirmationStud;
+//	}
+
+
+	public Users( String nom, String prenom, String email, String password, Admin admin, Apprenant apprenant, Roles roles) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
@@ -141,6 +157,15 @@ public class Users implements Serializable {
     public void setApprenant(Apprenant apprenant) {
         this.apprenant = apprenant;
     }
+
+    
+//	public boolean isConfirmationStud() {
+//		return confirmationStud;
+//	}
+//
+//	public void setConfirmationStud(boolean confirmationStud) {
+//		this.confirmationStud = confirmationStud;
+//	}
 
 	@Override
 	public String toString() {

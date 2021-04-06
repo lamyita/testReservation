@@ -16,11 +16,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+/*  utilisé pour implémenter l'application Web*/
 @Controller
 public class LoginController {
 
+	
+	// l’annotation utilisée pour injecter un bean 
+	
+	/* un bean est une classe Java qui respecte diverses règles 
+	de syntaxe et qui possède des accesseurs pour tous ses attributs*/
+	
+	
 	@Autowired
-
+////éliminer le problème de savoir quel bean doit être injecté. 
 	@Qualifier("UserService")
 	private UserService userService;
 

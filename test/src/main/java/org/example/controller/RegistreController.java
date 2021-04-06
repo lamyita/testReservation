@@ -1,5 +1,7 @@
 package org.example.controller;
 
+import java.util.List;
+
 import org.example.dao.ApprenantDao;
 import org.example.dao.ApprenantDaoImpl;
 import org.example.model.Apprenant;
@@ -20,6 +22,8 @@ public class RegistreController {
 
     private ApprenantDao userDao = new ApprenantDaoImpl();
 	
+    
+    
 	//controller method to show the registration form
 	
 	@RequestMapping(value = "/Register", method = RequestMethod.GET )
@@ -49,7 +53,6 @@ public class RegistreController {
 	
 	
 	}
-	
 	
 	
 	
